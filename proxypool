@@ -1,0 +1,686 @@
+port: 7890
+allow-lan: false
+mode: rule
+external-controller: 127.0.0.1:9090
+dns:
+  enabled: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+  - https://doh.pub/dns-query
+  - https://223.5.5.5/dns-query
+  - https://doh.360.cn/dns-query
+  - https://dns.alidns.com/dns-query
+  - 119.29.29.29
+  fallback:
+  - 8.8.8.8
+  - 8.8.4.4
+  - tls://1.0.0.1:853
+  - tls://dns.google:853
+proxies:
+  - {name: CN_24023_0001, server: bsuqian01.dynu.net, port: 27631, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0002, server: shenyang001.dynu.net, port: 45883, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0003, server: bsuqian01.dynu.net, port: 47531, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: gateway.icloud.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0004, server: agaungzhou01.bumbleshrimp.com, port: 46716, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0005, server: shenzhou05.mysynology.net, port: 28680, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0006, server: agaungzhou01.bumbleshrimp.com, port: 31800, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0007, server: gysz0000.dynu.net, port: 45883, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0008, server: gysz0000.dynu.net, port: 15823, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.yahoo.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0009, server: vip.jddns0202.top, port: 15700, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0010, server: gysz0000.dynu.net, port: 12477, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0011, server: zhee01.dynu.net, port: 54220, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0012, server: csuzhou01.1cooldns.com, port: 23301, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0013, server: beiyong.dynuddns.net, port: 47531, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: gateway.icloud.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0014, server: zhee01.dynu.net, port: 13263, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, client-fingerprint: chrome, servername: gateway.icloud.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0015, server: test123.zlqhdns.top, port: 54220, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0016, server: test123.zlqhdns.top, port: 15823, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.yahoo.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0017, server: shenyang001.dynu.net, port: 31735, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0018, server: zhee01.dynu.net, port: 15700, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0019, server: beiyong.dynuddns.net, port: 29877, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0020, server: csuzhou01.1cooldns.com, port: 27011, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.amazon.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0021, server: agaungzhou01.bumbleshrimp.com, port: 13391, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.yahoo.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0022, server: zhee01.dynu.net, port: 35853, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0023, server: bsuqian01.dynu.net, port: 25768, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0024, server: cos90-new2.dynu.net, port: 13989, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, client-fingerprint: chrome, servername: gateway.icloud.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0025, server: test123.zlqhdns.top, port: 23301, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0026, server: gysz0000.dynu.net, port: 11839, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0027, server: 2.linkhub.support, port: 40208, type: ssr, cipher: rc4-md5, password: ENZ52K, protocol: auth_aes128_md5, obfs: plain, protocol-param: "92902:pFWGOQ", obfs-param: cd2b692902.6602b8463464108506.microsoft.com, udp: true}
+  - {name: CN_24023_0028, server: dozo01.flztjc.top, port: 8313, type: trojan, password: 2c605663-b89a-5734-a9d6-97d4743d72cf, sni: hk-13-568.flztjc.net, skip-cert-verify: false, udp: true}
+  - {name: CN_24023_0029, server: 2.linkhub.support, port: 40206, type: ssr, cipher: rc4-md5, password: ENZ52K, protocol: auth_aes128_md5, obfs: plain, protocol-param: "92902:pFWGOQ", obfs-param: cd2b692902.6602b8463464108506.microsoft.com, udp: true}
+  - {name: CN_24023_0030, server: 121.14.61.174, port: 8313, type: trojan, password: 2c605663-b89a-5734-a9d6-97d4743d72cf, sni: hk-13-568.flztjc.net, skip-cert-verify: true, udp: true}
+  - {name: CN_24023_0031, server: agaungzhou01.bumbleshrimp.com, port: 12791, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.yahoo.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0032, server: shenzhou02.mysynology.net, port: 32193, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0033, server: v28.heduian.link, port: 30828, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /oooo, headers: {Host: ocbc.com}}, udp: true}
+  - {name: CN_24023_0034, server: zhee01.dynu.net, port: 64654, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: gateway.icloud.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0035, server: shenyang001.dynu.net, port: 29023, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.amazon.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0036, server: bsuqian01.dynu.net, port: 16955, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: www.yahoo.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0037, server: v4.heduian.link, port: 30804, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /oooo, headers: {Host: ocbc.com}}, udp: true}
+  - {name: CN_24023_0038, server: csuzhou01.1cooldns.com, port: 41274, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, client-fingerprint: chrome, servername: www.amazon.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: CN_24023_0039, server: v30.heduian.link, port: 30830, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /oooo, headers: {Host: ocbc.com}}, udp: true}
+  - {name: CN_24023_0040, server: csuzhou01.1cooldns.com, port: 25768, type: vless, uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, client-fingerprint: chrome, servername: www.nvidia.com, reality-opts: {public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY}, udp: true}
+  - {name: DE_24023_0041, server: mass4.459.pp.ua, port: 33117, type: vless, uuid: 2e7b1501-74a0-4f74-be84-559625aa3100, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, client-fingerprint: chrome, servername: yahoo.com, reality-opts: {public-key: Uu1ZW6SsALHqdsTBDaSB0EyLfG4jXxJhPWnu9A1VqiE, short-id: 86e10730d0e5a3}, udp: true}
+  - {name: GB_24023_0042, server: 202.78.163.141, port: 443, type: trojan, password: '3828095943467868160', sni: sharp-bear.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: GB_24023_0043, server: sharp-bear.dolphin109.quest, port: 443, type: trojan, password: '3828095943467868160', sni: sharp-bear.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: GB_24023_0044, server: handy-sparrow.dolphin109.quest, port: 443, type: trojan, password: '3828095943467868160', sni: handy-sparrow.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: JP_24023_0045, server: jp104-cdn-route.couldflare-cdn.com, port: 443, type: http, username: mrwdfNTD8M79LCukCieldrqZWqs=, password: exaxgqkKkd0TAMrCxeonWg==, tls: true, udp: true}
+  - {name: LU_24023_0046, server: concrete-lion.dolphin109.quest, port: 443, type: trojan, password: '3828095943467868160', sni: concrete-lion.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: LU_24023_0047, server: 93.174.164.49, port: 443, type: trojan, password: '3828095943467868160', sni: concrete-lion.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: NL_24023_0048, server: exotic-wahoo.dolphin109.quest, port: 443, type: trojan, password: '3828095943467868160', sni: exotic-wahoo.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: NL_24023_0049, server: choice-gar.dolphin109.quest, port: 443, type: trojan, password: '3828095943467868160', sni: choice-gar.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: RO_24023_0050, server: grateful-mako.dolphin109.quest, port: 443, type: trojan, password: '3828095943467868160', sni: grateful-mako.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: SG_24023_0051, server: stable-labrador.dolphin109.quest, port: 443, type: trojan, password: '3828095943467868160', sni: stable-labrador.dolphin109.quest, skip-cert-verify: true, udp: true}
+  - {name: US_24023_0052, server: c795e23c-sva740-sxnljm-1jr1u.los.gotochinatown.net, port: 443, type: http, username: 2c01eae6-0b6a-11ee-a058-f23c91369f2d, password: 2c01eae6-0b6a-11ee-a058-f23c91369f2d, tls: true, udp: true}
+  - {name: US_24023_0053, server: 185.122.166.216, port: 11590, type: vless, uuid: d0324125-032e-4f17-b48d-26ae0b6bf081, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, client-fingerprint: chrome, servername: yahoo.com, reality-opts: {public-key: 0NxhLNLvgD0NHroc2qx1CsXllFTOARjCMjwPPvU-yBs, short-id: ba37}, udp: true}
+proxy-groups:
+- name: â­• proxinode
+  type: select
+  proxies:
+  - â™»ï¸ automatic
+  - CN_24023_0001
+  - CN_24023_0002
+  - CN_24023_0003
+  - CN_24023_0004
+  - CN_24023_0005
+  - CN_24023_0006
+  - CN_24023_0007
+  - CN_24023_0008
+  - CN_24023_0009
+  - CN_24023_0010
+  - CN_24023_0011
+  - CN_24023_0012
+  - CN_24023_0013
+  - CN_24023_0014
+  - CN_24023_0015
+  - CN_24023_0016
+  - CN_24023_0017
+  - CN_24023_0018
+  - CN_24023_0019
+  - CN_24023_0020
+  - CN_24023_0021
+  - CN_24023_0022
+  - CN_24023_0023
+  - CN_24023_0024
+  - CN_24023_0025
+  - CN_24023_0026
+  - CN_24023_0027
+  - CN_24023_0028
+  - CN_24023_0029
+  - CN_24023_0030
+  - CN_24023_0031
+  - CN_24023_0032
+  - CN_24023_0033
+  - CN_24023_0034
+  - CN_24023_0035
+  - CN_24023_0036
+  - CN_24023_0037
+  - CN_24023_0038
+  - CN_24023_0039
+  - CN_24023_0040
+  - DE_24023_0041
+  - GB_24023_0042
+  - GB_24023_0043
+  - GB_24023_0044
+  - JP_24023_0045
+  - LU_24023_0046
+  - LU_24023_0047
+  - NL_24023_0048
+  - NL_24023_0049
+  - RO_24023_0050
+  - SG_24023_0051
+  - US_24023_0052
+  - US_24023_0053
+- name: â™»ï¸ automatic
+  type: url-test
+  proxies:
+  - CN_24023_0001
+  - CN_24023_0002
+  - CN_24023_0003
+  - CN_24023_0004
+  - CN_24023_0005
+  - CN_24023_0006
+  - CN_24023_0007
+  - CN_24023_0008
+  - CN_24023_0009
+  - CN_24023_0010
+  - CN_24023_0011
+  - CN_24023_0012
+  - CN_24023_0013
+  - CN_24023_0014
+  - CN_24023_0015
+  - CN_24023_0016
+  - CN_24023_0017
+  - CN_24023_0018
+  - CN_24023_0019
+  - CN_24023_0020
+  - CN_24023_0021
+  - CN_24023_0022
+  - CN_24023_0023
+  - CN_24023_0024
+  - CN_24023_0025
+  - CN_24023_0026
+  - CN_24023_0027
+  - CN_24023_0028
+  - CN_24023_0029
+  - CN_24023_0030
+  - CN_24023_0031
+  - CN_24023_0032
+  - CN_24023_0033
+  - CN_24023_0034
+  - CN_24023_0035
+  - CN_24023_0036
+  - CN_24023_0037
+  - CN_24023_0038
+  - CN_24023_0039
+  - CN_24023_0040
+  - DE_24023_0041
+  - GB_24023_0042
+  - GB_24023_0043
+  - GB_24023_0044
+  - JP_24023_0045
+  - LU_24023_0046
+  - LU_24023_0047
+  - NL_24023_0048
+  - NL_24023_0049
+  - RO_24023_0050
+  - SG_24023_0051
+  - US_24023_0052
+  - US_24023_0053
+  url: https://www.google.com/favicon.ico
+  interval: 300
+rules:
+- DOMAIN,safebrowsing.urlsec.qq.com,DIRECT
+- DOMAIN,safebrowsing.googleapis.com,DIRECT
+- DOMAIN,developer.apple.com,â­• proxinode
+- DOMAIN-SUFFIX,digicert.com,â­• proxinode
+- DOMAIN,ocsp.apple.com,â­• proxinode
+- DOMAIN,ocsp.comodoca.com,â­• proxinode
+- DOMAIN,ocsp.usertrust.com,â­• proxinode
+- DOMAIN,ocsp.sectigo.com,â­• proxinode
+- DOMAIN,ocsp.verisign.net,â­• proxinode
+- DOMAIN-SUFFIX,apple-dns.net,â­• proxinode
+- DOMAIN,testflight.apple.com,â­• proxinode
+- DOMAIN,sandbox.itunes.apple.com,â­• proxinode
+- DOMAIN,itunes.apple.com,â­• proxinode
+- DOMAIN-SUFFIX,apps.apple.com,â­• proxinode
+- DOMAIN-SUFFIX,blobstore.apple.com,â­• proxinode
+- DOMAIN,cvws.icloud-content.com,â­• proxinode
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT
+- DOMAIN-SUFFIX,itunes.apple.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,me.com,DIRECT
+- DOMAIN-SUFFIX,aaplimg.com,DIRECT
+- DOMAIN-SUFFIX,cdn20.com,DIRECT
+- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+- DOMAIN-SUFFIX,akadns.net,DIRECT
+- DOMAIN-SUFFIX,akamaiedge.net,DIRECT
+- DOMAIN-SUFFIX,edgekey.net,DIRECT
+- DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT
+- DOMAIN-SUFFIX,mwcname.com,DIRECT
+- DOMAIN-SUFFIX,apple.com,DIRECT
+- DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+- DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- DOMAIN-KEYWORD,-cn,DIRECT
+- DOMAIN-SUFFIX,126.com,DIRECT
+- DOMAIN-SUFFIX,126.net,DIRECT
+- DOMAIN-SUFFIX,127.net,DIRECT
+- DOMAIN-SUFFIX,163.com,DIRECT
+- DOMAIN-SUFFIX,360buyimg.com,DIRECT
+- DOMAIN-SUFFIX,36kr.com,DIRECT
+- DOMAIN-SUFFIX,acfun.tv,DIRECT
+- DOMAIN-SUFFIX,air-matters.com,DIRECT
+- DOMAIN-SUFFIX,aixifan.com,DIRECT
+- DOMAIN-KEYWORD,alicdn,DIRECT
+- DOMAIN-KEYWORD,alipay,DIRECT
+- DOMAIN-KEYWORD,taobao,DIRECT
+- DOMAIN-SUFFIX,amap.com,DIRECT
+- DOMAIN-SUFFIX,autonavi.com,DIRECT
+- DOMAIN-KEYWORD,baidu,DIRECT
+- DOMAIN-SUFFIX,bdimg.com,DIRECT
+- DOMAIN-SUFFIX,bdstatic.com,DIRECT
+- DOMAIN-SUFFIX,bilibili.com,DIRECT
+- DOMAIN-SUFFIX,bilivideo.com,DIRECT
+- DOMAIN-SUFFIX,caiyunapp.com,DIRECT
+- DOMAIN-SUFFIX,clouddn.com,DIRECT
+- DOMAIN-SUFFIX,cnbeta.com,DIRECT
+- DOMAIN-SUFFIX,cnbetacdn.com,DIRECT
+- DOMAIN-SUFFIX,cootekservice.com,DIRECT
+- DOMAIN-SUFFIX,csdn.net,DIRECT
+- DOMAIN-SUFFIX,ctrip.com,DIRECT
+- DOMAIN-SUFFIX,dgtle.com,DIRECT
+- DOMAIN-SUFFIX,dianping.com,DIRECT
+- DOMAIN-SUFFIX,douban.com,DIRECT
+- DOMAIN-SUFFIX,doubanio.com,DIRECT
+- DOMAIN-SUFFIX,duokan.com,DIRECT
+- DOMAIN-SUFFIX,easou.com,DIRECT
+- DOMAIN-SUFFIX,ele.me,DIRECT
+- DOMAIN-SUFFIX,feng.com,DIRECT
+- DOMAIN-SUFFIX,fir.im,DIRECT
+- DOMAIN-SUFFIX,frdic.com,DIRECT
+- DOMAIN-SUFFIX,g-cores.com,DIRECT
+- DOMAIN-SUFFIX,godic.net,DIRECT
+- DOMAIN-SUFFIX,gtimg.com,DIRECT
+- DOMAIN,cdn.hockeyapp.net,DIRECT
+- DOMAIN-SUFFIX,hongxiu.com,DIRECT
+- DOMAIN-SUFFIX,hxcdn.net,DIRECT
+- DOMAIN-SUFFIX,iciba.com,DIRECT
+- DOMAIN-SUFFIX,ifeng.com,DIRECT
+- DOMAIN-SUFFIX,ifengimg.com,DIRECT
+- DOMAIN-SUFFIX,ipip.net,DIRECT
+- DOMAIN-SUFFIX,iqiyi.com,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,jianshu.com,DIRECT
+- DOMAIN-SUFFIX,knewone.com,DIRECT
+- DOMAIN-SUFFIX,le.com,DIRECT
+- DOMAIN-SUFFIX,lecloud.com,DIRECT
+- DOMAIN-SUFFIX,lemicp.com,DIRECT
+- DOMAIN-SUFFIX,licdn.com,DIRECT
+- DOMAIN-SUFFIX,luoo.net,DIRECT
+- DOMAIN-SUFFIX,meituan.com,DIRECT
+- DOMAIN-SUFFIX,meituan.net,DIRECT
+- DOMAIN-SUFFIX,mi.com,DIRECT
+- DOMAIN-SUFFIX,miaopai.com,DIRECT
+- DOMAIN-SUFFIX,microsoft.com,DIRECT
+- DOMAIN-SUFFIX,microsoftonline.com,DIRECT
+- DOMAIN-SUFFIX,miui.com,DIRECT
+- DOMAIN-SUFFIX,miwifi.com,DIRECT
+- DOMAIN-SUFFIX,mob.com,DIRECT
+- DOMAIN-SUFFIX,netease.com,DIRECT
+- DOMAIN-SUFFIX,office.com,DIRECT
+- DOMAIN-SUFFIX,office365.com,DIRECT
+- DOMAIN-KEYWORD,officecdn,DIRECT
+- DOMAIN-SUFFIX,oschina.net,DIRECT
+- DOMAIN-SUFFIX,ppsimg.com,DIRECT
+- DOMAIN-SUFFIX,pstatp.com,DIRECT
+- DOMAIN-SUFFIX,qcloud.com,DIRECT
+- DOMAIN-SUFFIX,qdaily.com,DIRECT
+- DOMAIN-SUFFIX,qdmm.com,DIRECT
+- DOMAIN-SUFFIX,qhimg.com,DIRECT
+- DOMAIN-SUFFIX,qhres.com,DIRECT
+- DOMAIN-SUFFIX,qidian.com,DIRECT
+- DOMAIN-SUFFIX,qihucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiniu.com,DIRECT
+- DOMAIN-SUFFIX,qiniucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiyipic.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,qqurl.com,DIRECT
+- DOMAIN-SUFFIX,rarbg.to,DIRECT
+- DOMAIN-SUFFIX,ruguoapp.com,DIRECT
+- DOMAIN-SUFFIX,segmentfault.com,DIRECT
+- DOMAIN-SUFFIX,sinaapp.com,DIRECT
+- DOMAIN-SUFFIX,smzdm.com,DIRECT
+- DOMAIN-SUFFIX,snapdrop.net,DIRECT
+- DOMAIN-SUFFIX,sogou.com,DIRECT
+- DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+- DOMAIN-SUFFIX,sohu.com,DIRECT
+- DOMAIN-SUFFIX,soku.com,DIRECT
+- DOMAIN-SUFFIX,speedtest.net,â­• proxinode
+- DOMAIN-SUFFIX,sspai.com,DIRECT
+- DOMAIN-SUFFIX,suning.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
+- DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,tianyancha.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,tudou.com,DIRECT
+- DOMAIN-SUFFIX,umetrip.com,DIRECT
+- DOMAIN-SUFFIX,upaiyun.com,DIRECT
+- DOMAIN-SUFFIX,upyun.com,DIRECT
+- DOMAIN-SUFFIX,veryzhun.com,DIRECT
+- DOMAIN-SUFFIX,weather.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,xiami.com,DIRECT
+- DOMAIN-SUFFIX,xiami.net,DIRECT
+- DOMAIN-SUFFIX,xiaomicp.com,DIRECT
+- DOMAIN-SUFFIX,ximalaya.com,DIRECT
+- DOMAIN-SUFFIX,xmcdn.com,DIRECT
+- DOMAIN-SUFFIX,xunlei.com,DIRECT
+- DOMAIN-SUFFIX,yhd.com,DIRECT
+- DOMAIN-SUFFIX,yihaodianimg.com,DIRECT
+- DOMAIN-SUFFIX,yinxiang.com,DIRECT
+- DOMAIN-SUFFIX,ykimg.com,DIRECT
+- DOMAIN-SUFFIX,youdao.com,DIRECT
+- DOMAIN-SUFFIX,youku.com,DIRECT
+- DOMAIN-SUFFIX,zealer.com,DIRECT
+- DOMAIN-SUFFIX,zhihu.com,DIRECT
+- DOMAIN-SUFFIX,zhimg.com,DIRECT
+- DOMAIN-SUFFIX,zimuzu.tv,DIRECT
+- DOMAIN-SUFFIX,zoho.com,DIRECT
+- DOMAIN-KEYWORD,amazon,â­• proxinode
+- DOMAIN-KEYWORD,google,â­• proxinode
+- DOMAIN-KEYWORD,gmail,â­• proxinode
+- DOMAIN-KEYWORD,youtube,â­• proxinode
+- DOMAIN-KEYWORD,facebook,â­• proxinode
+- DOMAIN-SUFFIX,fb.me,â­• proxinode
+- DOMAIN-SUFFIX,fbcdn.net,â­• proxinode
+- DOMAIN-KEYWORD,twitter,â­• proxinode
+- DOMAIN-KEYWORD,instagram,â­• proxinode
+- DOMAIN-KEYWORD,dropbox,â­• proxinode
+- DOMAIN-SUFFIX,twimg.com,â­• proxinode
+- DOMAIN-KEYWORD,blogspot,â­• proxinode
+- DOMAIN-SUFFIX,youtu.be,â­• proxinode
+- DOMAIN-KEYWORD,whatsapp,â­• proxinode
+- DOMAIN-KEYWORD,admarvel,REJECT
+- DOMAIN-KEYWORD,admaster,REJECT
+- DOMAIN-KEYWORD,adsage,REJECT
+- DOMAIN-KEYWORD,adsmogo,REJECT
+- DOMAIN-KEYWORD,adsrvmedia,REJECT
+- DOMAIN-KEYWORD,adwords,REJECT
+- DOMAIN-KEYWORD,adservice,REJECT
+- DOMAIN-SUFFIX,appsflyer.com,REJECT
+- DOMAIN-KEYWORD,domob,REJECT
+- DOMAIN-SUFFIX,doubleclick.net,REJECT
+- DOMAIN-KEYWORD,duomeng,REJECT
+- DOMAIN-KEYWORD,dwtrack,REJECT
+- DOMAIN-KEYWORD,guanggao,REJECT
+- DOMAIN-KEYWORD,lianmeng,REJECT
+- DOMAIN-SUFFIX,mmstat.com,REJECT
+- DOMAIN-KEYWORD,mopub,REJECT
+- DOMAIN-KEYWORD,omgmta,REJECT
+- DOMAIN-KEYWORD,openx,REJECT
+- DOMAIN-KEYWORD,partnerad,REJECT
+- DOMAIN-KEYWORD,pingfore,REJECT
+- DOMAIN-KEYWORD,supersonicads,REJECT
+- DOMAIN-KEYWORD,uedas,REJECT
+- DOMAIN-KEYWORD,umeng,REJECT
+- DOMAIN-KEYWORD,usage,REJECT
+- DOMAIN-SUFFIX,vungle.com,REJECT
+- DOMAIN-KEYWORD,wlmonitor,REJECT
+- DOMAIN-KEYWORD,zjtoolbar,REJECT
+- DOMAIN-SUFFIX,9to5mac.com,â­• proxinode
+- DOMAIN-SUFFIX,abpchina.org,â­• proxinode
+- DOMAIN-SUFFIX,adblockplus.org,â­• proxinode
+- DOMAIN-SUFFIX,adobe.com,â­• proxinode
+- DOMAIN-SUFFIX,akamaized.net,â­• proxinode
+- DOMAIN-SUFFIX,alfredapp.com,â­• proxinode
+- DOMAIN-SUFFIX,amplitude.com,â­• proxinode
+- DOMAIN-SUFFIX,ampproject.org,â­• proxinode
+- DOMAIN-SUFFIX,android.com,â­• proxinode
+- DOMAIN-SUFFIX,angularjs.org,â­• proxinode
+- DOMAIN-SUFFIX,aolcdn.com,â­• proxinode
+- DOMAIN-SUFFIX,apkpure.com,â­• proxinode
+- DOMAIN-SUFFIX,appledaily.com,â­• proxinode
+- DOMAIN-SUFFIX,appshopper.com,â­• proxinode
+- DOMAIN-SUFFIX,appspot.com,â­• proxinode
+- DOMAIN-SUFFIX,arcgis.com,â­• proxinode
+- DOMAIN-SUFFIX,archive.org,â­• proxinode
+- DOMAIN-SUFFIX,armorgames.com,â­• proxinode
+- DOMAIN-SUFFIX,aspnetcdn.com,â­• proxinode
+- DOMAIN-SUFFIX,att.com,â­• proxinode
+- DOMAIN-SUFFIX,awsstatic.com,â­• proxinode
+- DOMAIN-SUFFIX,azureedge.net,â­• proxinode
+- DOMAIN-SUFFIX,azurewebsites.net,â­• proxinode
+- DOMAIN-SUFFIX,bing.com,â­• proxinode
+- DOMAIN-SUFFIX,bintray.com,â­• proxinode
+- DOMAIN-SUFFIX,bit.com,â­• proxinode
+- DOMAIN-SUFFIX,bit.ly,â­• proxinode
+- DOMAIN-SUFFIX,bitbucket.org,â­• proxinode
+- DOMAIN-SUFFIX,bjango.com,â­• proxinode
+- DOMAIN-SUFFIX,bkrtx.com,â­• proxinode
+- DOMAIN-SUFFIX,blog.com,â­• proxinode
+- DOMAIN-SUFFIX,blogcdn.com,â­• proxinode
+- DOMAIN-SUFFIX,blogger.com,â­• proxinode
+- DOMAIN-SUFFIX,blogsmithmedia.com,â­• proxinode
+- DOMAIN-SUFFIX,blogspot.com,â­• proxinode
+- DOMAIN-SUFFIX,blogspot.hk,â­• proxinode
+- DOMAIN-SUFFIX,bloomberg.com,â­• proxinode
+- DOMAIN-SUFFIX,box.com,â­• proxinode
+- DOMAIN-SUFFIX,box.net,â­• proxinode
+- DOMAIN-SUFFIX,cachefly.net,â­• proxinode
+- DOMAIN-SUFFIX,chromium.org,â­• proxinode
+- DOMAIN-SUFFIX,cl.ly,â­• proxinode
+- DOMAIN-SUFFIX,cloudflare.com,â­• proxinode
+- DOMAIN-SUFFIX,cloudfront.net,â­• proxinode
+- DOMAIN-SUFFIX,cloudmagic.com,â­• proxinode
+- DOMAIN-SUFFIX,cmail19.com,â­• proxinode
+- DOMAIN-SUFFIX,cnet.com,â­• proxinode
+- DOMAIN-SUFFIX,cocoapods.org,â­• proxinode
+- DOMAIN-SUFFIX,comodoca.com,â­• proxinode
+- DOMAIN-SUFFIX,crashlytics.com,â­• proxinode
+- DOMAIN-SUFFIX,culturedcode.com,â­• proxinode
+- DOMAIN-SUFFIX,d.pr,â­• proxinode
+- DOMAIN-SUFFIX,danilo.to,â­• proxinode
+- DOMAIN-SUFFIX,dayone.me,â­• proxinode
+- DOMAIN-SUFFIX,db.tt,â­• proxinode
+- DOMAIN-SUFFIX,deskconnect.com,â­• proxinode
+- DOMAIN-SUFFIX,disq.us,â­• proxinode
+- DOMAIN-SUFFIX,disqus.com,â­• proxinode
+- DOMAIN-SUFFIX,disquscdn.com,â­• proxinode
+- DOMAIN-SUFFIX,dnsimple.com,â­• proxinode
+- DOMAIN-SUFFIX,docker.com,â­• proxinode
+- DOMAIN-SUFFIX,dribbble.com,â­• proxinode
+- DOMAIN-SUFFIX,droplr.com,â­• proxinode
+- DOMAIN-SUFFIX,duckduckgo.com,â­• proxinode
+- DOMAIN-SUFFIX,dueapp.com,â­• proxinode
+- DOMAIN-SUFFIX,dytt8.net,â­• proxinode
+- DOMAIN-SUFFIX,edgecastcdn.net,â­• proxinode
+- DOMAIN-SUFFIX,edgekey.net,â­• proxinode
+- DOMAIN-SUFFIX,edgesuite.net,â­• proxinode
+- DOMAIN-SUFFIX,engadget.com,â­• proxinode
+- DOMAIN-SUFFIX,entrust.net,â­• proxinode
+- DOMAIN-SUFFIX,eurekavpt.com,â­• proxinode
+- DOMAIN-SUFFIX,evernote.com,â­• proxinode
+- DOMAIN-SUFFIX,fabric.io,â­• proxinode
+- DOMAIN-SUFFIX,fast.com,â­• proxinode
+- DOMAIN-SUFFIX,fastly.net,â­• proxinode
+- DOMAIN-SUFFIX,fc2.com,â­• proxinode
+- DOMAIN-SUFFIX,feedburner.com,â­• proxinode
+- DOMAIN-SUFFIX,feedly.com,â­• proxinode
+- DOMAIN-SUFFIX,feedsportal.com,â­• proxinode
+- DOMAIN-SUFFIX,fiftythree.com,â­• proxinode
+- DOMAIN-SUFFIX,firebaseio.com,â­• proxinode
+- DOMAIN-SUFFIX,flexibits.com,â­• proxinode
+- DOMAIN-SUFFIX,flickr.com,â­• proxinode
+- DOMAIN-SUFFIX,flipboard.com,â­• proxinode
+- DOMAIN-SUFFIX,g.co,â­• proxinode
+- DOMAIN-SUFFIX,gabia.net,â­• proxinode
+- DOMAIN-SUFFIX,geni.us,â­• proxinode
+- DOMAIN-SUFFIX,gfx.ms,â­• proxinode
+- DOMAIN-SUFFIX,ggpht.com,â­• proxinode
+- DOMAIN-SUFFIX,ghostnoteapp.com,â­• proxinode
+- DOMAIN-SUFFIX,git.io,â­• proxinode
+- DOMAIN-KEYWORD,github,â­• proxinode
+- DOMAIN-SUFFIX,globalsign.com,â­• proxinode
+- DOMAIN-SUFFIX,gmodules.com,â­• proxinode
+- DOMAIN-SUFFIX,godaddy.com,â­• proxinode
+- DOMAIN-SUFFIX,golang.org,â­• proxinode
+- DOMAIN-SUFFIX,gongm.in,â­• proxinode
+- DOMAIN-SUFFIX,goo.gl,â­• proxinode
+- DOMAIN-SUFFIX,goodreaders.com,â­• proxinode
+- DOMAIN-SUFFIX,goodreads.com,â­• proxinode
+- DOMAIN-SUFFIX,gravatar.com,â­• proxinode
+- DOMAIN-SUFFIX,gstatic.com,â­• proxinode
+- DOMAIN-SUFFIX,gvt0.com,â­• proxinode
+- DOMAIN-SUFFIX,hockeyapp.net,â­• proxinode
+- DOMAIN-SUFFIX,hotmail.com,â­• proxinode
+- DOMAIN-SUFFIX,icons8.com,â­• proxinode
+- DOMAIN-SUFFIX,ifixit.com,â­• proxinode
+- DOMAIN-SUFFIX,ift.tt,â­• proxinode
+- DOMAIN-SUFFIX,ifttt.com,â­• proxinode
+- DOMAIN-SUFFIX,iherb.com,â­• proxinode
+- DOMAIN-SUFFIX,imageshack.us,â­• proxinode
+- DOMAIN-SUFFIX,img.ly,â­• proxinode
+- DOMAIN-SUFFIX,imgur.com,â­• proxinode
+- DOMAIN-SUFFIX,imore.com,â­• proxinode
+- DOMAIN-SUFFIX,instapaper.com,â­• proxinode
+- DOMAIN-SUFFIX,ipn.li,â­• proxinode
+- DOMAIN-SUFFIX,is.gd,â­• proxinode
+- DOMAIN-SUFFIX,issuu.com,â­• proxinode
+- DOMAIN-SUFFIX,itgonglun.com,â­• proxinode
+- DOMAIN-SUFFIX,itun.es,â­• proxinode
+- DOMAIN-SUFFIX,ixquick.com,â­• proxinode
+- DOMAIN-SUFFIX,j.mp,â­• proxinode
+- DOMAIN-SUFFIX,js.revsci.net,â­• proxinode
+- DOMAIN-SUFFIX,jshint.com,â­• proxinode
+- DOMAIN-SUFFIX,jtvnw.net,â­• proxinode
+- DOMAIN-SUFFIX,justgetflux.com,â­• proxinode
+- DOMAIN-SUFFIX,kat.cr,â­• proxinode
+- DOMAIN-SUFFIX,klip.me,â­• proxinode
+- DOMAIN-SUFFIX,libsyn.com,â­• proxinode
+- DOMAIN-SUFFIX,linkedin.com,â­• proxinode
+- DOMAIN-SUFFIX,linode.com,â­• proxinode
+- DOMAIN-SUFFIX,lithium.com,â­• proxinode
+- DOMAIN-SUFFIX,littlehj.com,â­• proxinode
+- DOMAIN-SUFFIX,live.com,â­• proxinode
+- DOMAIN-SUFFIX,live.net,â­• proxinode
+- DOMAIN-SUFFIX,livefilestore.com,â­• proxinode
+- DOMAIN-SUFFIX,llnwd.net,â­• proxinode
+- DOMAIN-SUFFIX,macid.co,â­• proxinode
+- DOMAIN-SUFFIX,macromedia.com,â­• proxinode
+- DOMAIN-SUFFIX,macrumors.com,â­• proxinode
+- DOMAIN-SUFFIX,mashable.com,â­• proxinode
+- DOMAIN-SUFFIX,mathjax.org,â­• proxinode
+- DOMAIN-SUFFIX,medium.com,â­• proxinode
+- DOMAIN-SUFFIX,mega.co.nz,â­• proxinode
+- DOMAIN-SUFFIX,mega.nz,â­• proxinode
+- DOMAIN-SUFFIX,megaupload.com,â­• proxinode
+- DOMAIN-SUFFIX,microsofttranslator.com,â­• proxinode
+- DOMAIN-SUFFIX,mindnode.com,â­• proxinode
+- DOMAIN-SUFFIX,mobile01.com,â­• proxinode
+- DOMAIN-SUFFIX,modmyi.com,â­• proxinode
+- DOMAIN-SUFFIX,msedge.net,â­• proxinode
+- DOMAIN-SUFFIX,myfontastic.com,â­• proxinode
+- DOMAIN-SUFFIX,name.com,â­• proxinode
+- DOMAIN-SUFFIX,nextmedia.com,â­• proxinode
+- DOMAIN-SUFFIX,nsstatic.net,â­• proxinode
+- DOMAIN-SUFFIX,nssurge.com,â­• proxinode
+- DOMAIN-SUFFIX,nyt.com,â­• proxinode
+- DOMAIN-SUFFIX,nytimes.com,â­• proxinode
+- DOMAIN-SUFFIX,omnigroup.com,â­• proxinode
+- DOMAIN-SUFFIX,onedrive.com,â­• proxinode
+- DOMAIN-SUFFIX,onenote.com,â­• proxinode
+- DOMAIN-SUFFIX,ooyala.com,â­• proxinode
+- DOMAIN-SUFFIX,openvpn.net,â­• proxinode
+- DOMAIN-SUFFIX,openwrt.org,â­• proxinode
+- DOMAIN-SUFFIX,orkut.com,â­• proxinode
+- DOMAIN-SUFFIX,osxdaily.com,â­• proxinode
+- DOMAIN-SUFFIX,outlook.com,â­• proxinode
+- DOMAIN-SUFFIX,ow.ly,â­• proxinode
+- DOMAIN-SUFFIX,paddleapi.com,â­• proxinode
+- DOMAIN-SUFFIX,parallels.com,â­• proxinode
+- DOMAIN-SUFFIX,parse.com,â­• proxinode
+- DOMAIN-SUFFIX,pdfexpert.com,â­• proxinode
+- DOMAIN-SUFFIX,periscope.tv,â­• proxinode
+- DOMAIN-SUFFIX,pinboard.in,â­• proxinode
+- DOMAIN-SUFFIX,pinterest.com,â­• proxinode
+- DOMAIN-SUFFIX,pixelmator.com,â­• proxinode
+- DOMAIN-SUFFIX,pixiv.net,â­• proxinode
+- DOMAIN-SUFFIX,playpcesor.com,â­• proxinode
+- DOMAIN-SUFFIX,playstation.com,â­• proxinode
+- DOMAIN-SUFFIX,playstation.com.hk,â­• proxinode
+- DOMAIN-SUFFIX,playstation.net,â­• proxinode
+- DOMAIN-SUFFIX,playstationnetwork.com,â­• proxinode
+- DOMAIN-SUFFIX,pushwoosh.com,â­• proxinode
+- DOMAIN-SUFFIX,rime.im,â­• proxinode
+- DOMAIN-SUFFIX,servebom.com,â­• proxinode
+- DOMAIN-SUFFIX,sfx.ms,â­• proxinode
+- DOMAIN-SUFFIX,shadowsocks.org,â­• proxinode
+- DOMAIN-SUFFIX,sharethis.com,â­• proxinode
+- DOMAIN-SUFFIX,shazam.com,â­• proxinode
+- DOMAIN-SUFFIX,skype.com,â­• proxinode
+- DOMAIN-SUFFIX,smartdnsâ­• proxinode.com,â­• proxinode
+- DOMAIN-SUFFIX,smartmailcloud.com,â­• proxinode
+- DOMAIN-SUFFIX,sndcdn.com,â­• proxinode
+- DOMAIN-SUFFIX,sony.com,â­• proxinode
+- DOMAIN-SUFFIX,soundcloud.com,â­• proxinode
+- DOMAIN-SUFFIX,sourceforge.net,â­• proxinode
+- DOMAIN-SUFFIX,spotify.com,â­• proxinode
+- DOMAIN-SUFFIX,squarespace.com,â­• proxinode
+- DOMAIN-SUFFIX,sstatic.net,â­• proxinode
+- DOMAIN-SUFFIX,st.luluku.pw,â­• proxinode
+- DOMAIN-SUFFIX,stackoverflow.com,â­• proxinode
+- DOMAIN-SUFFIX,startpage.com,â­• proxinode
+- DOMAIN-SUFFIX,staticflickr.com,â­• proxinode
+- DOMAIN-SUFFIX,steamcommunity.com,â­• proxinode
+- DOMAIN-SUFFIX,symauth.com,â­• proxinode
+- DOMAIN-SUFFIX,symcb.com,â­• proxinode
+- DOMAIN-SUFFIX,symcd.com,â­• proxinode
+- DOMAIN-SUFFIX,tapbots.com,â­• proxinode
+- DOMAIN-SUFFIX,tapbots.net,â­• proxinode
+- DOMAIN-SUFFIX,tdesktop.com,â­• proxinode
+- DOMAIN-SUFFIX,techcrunch.com,â­• proxinode
+- DOMAIN-SUFFIX,techsmith.com,â­• proxinode
+- DOMAIN-SUFFIX,thepiratebay.org,â­• proxinode
+- DOMAIN-SUFFIX,theverge.com,â­• proxinode
+- DOMAIN-SUFFIX,time.com,â­• proxinode
+- DOMAIN-SUFFIX,timeinc.net,â­• proxinode
+- DOMAIN-SUFFIX,tiny.cc,â­• proxinode
+- DOMAIN-SUFFIX,tinypic.com,â­• proxinode
+- DOMAIN-SUFFIX,tmblr.co,â­• proxinode
+- DOMAIN-SUFFIX,todoist.com,â­• proxinode
+- DOMAIN-SUFFIX,trello.com,â­• proxinode
+- DOMAIN-SUFFIX,trustasiassl.com,â­• proxinode
+- DOMAIN-SUFFIX,tumblr.co,â­• proxinode
+- DOMAIN-SUFFIX,tumblr.com,â­• proxinode
+- DOMAIN-SUFFIX,tweetdeck.com,â­• proxinode
+- DOMAIN-SUFFIX,tweetmarker.net,â­• proxinode
+- DOMAIN-SUFFIX,twitch.tv,â­• proxinode
+- DOMAIN-SUFFIX,txmblr.com,â­• proxinode
+- DOMAIN-SUFFIX,typekit.net,â­• proxinode
+- DOMAIN-SUFFIX,ubertags.com,â­• proxinode
+- DOMAIN-SUFFIX,ublock.org,â­• proxinode
+- DOMAIN-SUFFIX,ubnt.com,â­• proxinode
+- DOMAIN-SUFFIX,ulyssesapp.com,â­• proxinode
+- DOMAIN-SUFFIX,urchin.com,â­• proxinode
+- DOMAIN-SUFFIX,usertrust.com,â­• proxinode
+- DOMAIN-SUFFIX,v.gd,â­• proxinode
+- DOMAIN-SUFFIX,v2ex.com,â­• proxinode
+- DOMAIN-SUFFIX,vimeo.com,â­• proxinode
+- DOMAIN-SUFFIX,vimeocdn.com,â­• proxinode
+- DOMAIN-SUFFIX,vine.co,â­• proxinode
+- DOMAIN-SUFFIX,vivaldi.com,â­• proxinode
+- DOMAIN-SUFFIX,vox-cdn.com,â­• proxinode
+- DOMAIN-SUFFIX,vsco.co,â­• proxinode
+- DOMAIN-SUFFIX,vultr.com,â­• proxinode
+- DOMAIN-SUFFIX,w.org,â­• proxinode
+- DOMAIN-SUFFIX,w3schools.com,â­• proxinode
+- DOMAIN-SUFFIX,webtype.com,â­• proxinode
+- DOMAIN-SUFFIX,wikiwand.com,â­• proxinode
+- DOMAIN-SUFFIX,wikileaks.org,â­• proxinode
+- DOMAIN-SUFFIX,wikimedia.org,â­• proxinode
+- DOMAIN-SUFFIX,wikipedia.com,â­• proxinode
+- DOMAIN-SUFFIX,wikipedia.org,â­• proxinode
+- DOMAIN-SUFFIX,windows.com,â­• proxinode
+- DOMAIN-SUFFIX,windows.net,â­• proxinode
+- DOMAIN-SUFFIX,wire.com,â­• proxinode
+- DOMAIN-SUFFIX,wordpress.com,â­• proxinode
+- DOMAIN-SUFFIX,workflowy.com,â­• proxinode
+- DOMAIN-SUFFIX,wp.com,â­• proxinode
+- DOMAIN-SUFFIX,wsj.com,â­• proxinode
+- DOMAIN-SUFFIX,wsj.net,â­• proxinode
+- DOMAIN-SUFFIX,xda-developers.com,â­• proxinode
+- DOMAIN-SUFFIX,xeeno.com,â­• proxinode
+- DOMAIN-SUFFIX,xiti.com,â­• proxinode
+- DOMAIN-SUFFIX,yahoo.com,â­• proxinode
+- DOMAIN-SUFFIX,yimg.com,â­• proxinode
+- DOMAIN-SUFFIX,ying.com,â­• proxinode
+- DOMAIN-SUFFIX,yoyo.org,â­• proxinode
+- DOMAIN-SUFFIX,ytimg.com,â­• proxinode
+- DOMAIN-SUFFIX,telegra.ph,â­• proxinode
+- DOMAIN-SUFFIX,telegram.org,â­• proxinode
+- IP-CIDR,91.108.4.0/22,â­• proxinode
+- IP-CIDR,91.108.8.0/21,â­• proxinode
+- IP-CIDR,91.108.16.0/22,â­• proxinode
+- IP-CIDR,91.108.56.0/22,â­• proxinode
+- IP-CIDR,149.154.160.0/20,â­• proxinode
+- IP-CIDR6,2001:67c:4e8::/48,â­• proxinode
+- IP-CIDR6,2001:b28:f23d::/48,â­• proxinode
+- IP-CIDR6,2001:b28:f23f::/48,â­• proxinode
+- DOMAIN,injections.adguard.org,DIRECT
+- DOMAIN,local.adguard.org,DIRECT
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,17.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR,224.0.0.0/4,DIRECT
+- IP-CIDR6,fe80::/10,DIRECT
+- IP-CIDR,2002::/16,DIRECT
+- IP-CIDR,2001:db8::/32,DIRECT
+- IP-CIDR,2001::/32,DIRECT
+- IP-CIDR,2001:20::/28,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,â­• proxinode
