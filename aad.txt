@@ -18,3 +18,4 @@ https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/wenode.txt
 https://raw.githubusercontent.com/roosterkid/openproxylist/refs/heads/main/V2RAY_BASE64.txt
 https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt
 https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray
+https://raw.githubusercontent.com/wentao883/TG-wxgqlfx_LSDY/refs/heads/main/pdyjdy_LSDY
