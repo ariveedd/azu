@@ -3,98 +3,79 @@ socks-port: 7891
 allow-lan: true
 mode: rule
 log-level: info
-external-controller: 127.0.0.1:9090
+external-controller: 127.0.0.1:6170
+ipv6: true
+unified-delay: false
+tcp-concurrent: true
+global-client-fingerprint: chrome
+hosts:
+  mtalk.google.com: 108.177.125.188
+experimental:
+  ignore-resolve-fail: true
+cfw-latency-url: https://connectivitycheck.gstatic.com/generate_204
+cfw-latency-type: 1
+cfw-latency-timeout: 5000
+cfw-conn-break-strategy: true
+clash-for-android:
+  append-system-dns: false
+  ui-subtitle-pattern: "[一-龥]{2,4}"
+url-rewrite:
+  - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+  - ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
+sniffer:
+  enable: true
+  sniff:
+    TLS: {ports: [1-65535], override-destination: true}
+    HTTP: {ports: [1-65535], override-destination: true}
+    QUIC: {ports: [1-65535], override-destination: true}
+  skip-domain:
+    - Mijia Cloud
+    - dlg.io.mi.com
+    - +.push.apple.com
+  parse-pure-ip: false
+  force-dns-mapping: true
+  override-destination: true
+dns:
+  ipv6: false
+  enable: true
+  prefer-h3: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  use-hosts: false
+  default-nameserver: [119.28.28.28, 119.29.29.29, 223.5.5.5, 223.6.6.6]
+  nameserver: [119.29.29.29, 223.5.5.5, tls://dot.pub:853, tls://dns.alidns.com:853, https://doh.pub:443/dns-query, https://dns.alidns.com:443/dns-query]
+  fallback: [https://dns.cloudflare.com/dns-query, https://doh.dns.sb/dns-query, tls://8.8.4.4:853]
+  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32]}
+  fake-ip-range: 198.18.0.1/15
+  fake-ip-filter: ["*.lan", "*.localdomain", "*.example", "*.invalid", "*.localhost", "*.test", "*.local"]
 proxies:
-  - {name: HK Akari 01 @SubscriptionShare, server: 120.241.239.80, port: 16015, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: HK HKT 02 @SubscriptionShare, server: 112.120.131.125, port: 543, type: hysteria2, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, obfs: salamander, obfs-password: YjcwMDNiMDhhZWU1OTU4MA==, sni: hktv03.outleft-hy.xyz, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: HK HKT 03 @SubscriptionShare, server: 168.70.90.117, port: 5002, type: hysteria2, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, obfs: salamander, obfs-password: YTRkMDE1MzQ4NmFlNmQxNg==, sni: hktv02.outleft-hy.xyz, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: HK HKT 04 @SubscriptionShare, server: 112.120.48.180, port: 543, type: hysteria2, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, obfs: salamander, obfs-password: ZDMwYmM5ZjYyZDVmMTk0Ng==, sni: hktv01.outleft-hy.xyz, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: HK HKT 05 @SubscriptionShare, server: 112.118.248.46, port: 543, type: hysteria2, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, obfs: salamander, obfs-password: YjcwMDNiMDhhZWU1OTU4MA==, sni: hktv04.outleft-hy.xyz, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: HK HGCL 06 @SubscriptionShare, server: 103.37.45.212, port: 567, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HGCL 07 @SubscriptionShare, server: 103.37.45.151, port: 563, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HKBNL 08 @SubscriptionShare, server: 103.37.45.177, port: 572, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HKT 09 @SubscriptionShare, server: 103.37.45.144, port: 565, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HK 10 @SubscriptionShare, server: 103.37.45.170, port: 571, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HGCL 11 @SubscriptionShare, server: 103.37.45.212, port: 568, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HK 12 @SubscriptionShare, server: 103.37.45.144, port: 564, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HKBNL 13 @SubscriptionShare, server: 103.37.45.212, port: 566, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HK 14 @SubscriptionShare, server: 103.37.45.177, port: 573, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HKBNL 15 @SubscriptionShare, server: 103.37.45.136, port: 570, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK DMIT 16 @SubscriptionShare, server: 183.236.97.191, port: 40382, type: ss, cipher: 2022-blake3-aes-128-gcm, password: ZTc1ZDIxMzg1OGE1ZjYyOQ==:MzgzYzE0YjYtMjE2MS00ZA==, udp: true, tfo: true}
-  - {name: HK HKT 17 @SubscriptionShare, server: 119.36.154.186, port: 1053, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: HK HKT 18 @SubscriptionShare, server: 42.3.170.80, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: SG Akari 01 @SubscriptionShare, server: 120.241.239.80, port: 18002, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: SG AMAZON 02 @SubscriptionShare, server: 13.212.116.216, port: 20230, type: trojan, password: 58176021-8165-48d5-94b1-ad3e96e71e8b, sni: www.alibaba.com, skip-cert-verify: true, network: ws, ws-opts: {path: "", headers: {Host: www.alibaba.com}}, udp: true, tfo: true}
-  - {name: SG Akamai 03 @SubscriptionShare, server: 183.236.97.153, port: 40381, type: ss, cipher: 2022-blake3-aes-128-gcm, password: ZTc1ZDIxMzg1OGE1ZjYyOQ==:MmRjYmJmY2QtOGJjZC00OA==, udp: true, tfo: true}
-  - {name: SG AS 04 @SubscriptionShare, server: 207.148.119.171, port: 443, type: trojan, password: 7f7fea1d-16cf-3f0b-95c8-2dbb2fc5a97c, sni: sg.sstank.top, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: SG ORACLE 05 @SubscriptionShare, server: 119.36.154.60, port: 680, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: SG ORACLE 06 @SubscriptionShare, server: 119.36.154.60, port: 690, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: SG ORACLE 07 @SubscriptionShare, server: 119.36.154.66, port: 596, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: JP Akari 01 @SubscriptionShare, server: 120.241.239.80, port: 19010, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: JP ORACLE 02 @SubscriptionShare, server: 119.36.154.60, port: 660, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: JP ORACLE 03 @SubscriptionShare, server: 119.36.154.60, port: 670, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: JP AMAZON 04 @SubscriptionShare, server: 54.199.134.79, port: 20230, type: trojan, password: 90e7b2f3-fb61-4fd7-959f-176e9a51d8d7, sni: www.alibaba.com, skip-cert-verify: true, network: ws, ws-opts: {path: "", headers: {Host: www.alibaba.com}}, udp: true, tfo: true}
-  - {name: JP xTom 05 @SubscriptionShare, server: 144.48.180.187, port: 30806, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: US Akari 01 @SubscriptionShare, server: 120.241.239.80, port: 20008, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: US AS 02 @SubscriptionShare, server: 149.28.211.80, port: 443, type: trojan, password: 7f7fea1d-16cf-3f0b-95c8-2dbb2fc5a97c, sni: usa1.sstank.top, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: US AS 03 @SubscriptionShare, server: 149.28.76.252, port: 443, type: trojan, password: 7f7fea1d-16cf-3f0b-95c8-2dbb2fc5a97c, sni: usa.sstank.top, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: US ASNET 04 @SubscriptionShare, server: 54.95.79.44, port: 443, type: vless, tls: true, packet-encoding: xudp, uuid: 5aba5b77-48eb-4ae2-b60d-5bfee7ac169e, servername: kuangbao.xiejiang.dpdns.org, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: kuangbao.xiejiang.dpdns.org}}, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: US EDCL 05 @SubscriptionShare, server: 119.36.154.42, port: 612, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: US 365 06 @SubscriptionShare, server: 23.152.200.169, port: 443, type: vless, tls: true, packet-encoding: xudp, uuid: 9b0c1d6e-7f6e-4b06-96ba-b8a397a69166, servername: www.bing.com, path: /, flow: xtls-rprx-vision, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: US Alibaba 07 @SubscriptionShare, server: 47.252.75.203, port: 443, type: vless, tls: true, packet-encoding: xudp, uuid: 3e7f67de-648e-4871-b51a-a225214d41ee, servername: www.primevideo.com, path: /, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: US MICROSOFT 08 @SubscriptionShare, server: 198.41.209.88, port: 2086, type: vless, tls: true, packet-encoding: xudp, uuid: 636de463-b509-4631-adc6-400b21733278, network: ws, ws-opts: {path: /txr7ehsbynnn4fxy, headers: {Host: index.harmony611.workers.dev}}, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: US Serva 09 @SubscriptionShare, server: 8.217.180.234, port: 443, type: vless, tls: true, packet-encoding: xudp, uuid: 5aba5b77-48eb-4ae2-b60d-5bfee7ac169e, servername: kuangbao.xiejiang.dpdns.org, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: kuangbao.xiejiang.dpdns.org}}, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: TW Akari 01 @SubscriptionShare, server: 120.241.239.80, port: 17004, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: TW DCBG 02 @SubscriptionShare, server: 220.128.110.108, port: 43, type: vless, tls: true, packet-encoding: xudp, uuid: 69228a95-e9cb-b1ff-40d2-7315d9d4b9b7, servername: s3.sni565.netlib.re, network: ws, ws-opts: {path: /proxyip=tw.sni2025.netlib.re, headers: {Host: s3.sni565.netlib.re}}, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: CA TGs4 01 @SubscriptionShare, server: 120.241.239.80, port: 22002, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: CA Datacamp 02 @SubscriptionShare, server: 119.36.154.159, port: 2055, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: DE AS 01 @SubscriptionShare, server: 120.241.239.80, port: 28001, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: DE IPProjects 02 @SubscriptionShare, server: 119.36.154.159, port: 2163, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: DE ASNET 03 @SubscriptionShare, server: 185.121.134.113, port: 443, type: vless, tls: true, packet-encoding: xudp, uuid: 22eb7060-d314-49d6-9d24-5a3ee72488cd, servername: torretobarbershop.de, path: /, flow: xtls-rprx-vision, reality-opts: {public-key: ebCoS9P5o6dm9v8Dxbe-lEuEzS-R9rPH0IaimuAIKDg, short-id: 25f8f93d}, client-fingerprint: random, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: ES Chelyabinsk 01 @SubscriptionShare, server: 119.36.154.159, port: 2083, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: GB M247 01 @SubscriptionShare, server: 120.241.239.80, port: 23001, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: GB ICSL 02 @SubscriptionShare, server: 119.36.154.159, port: 2065, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: GB UDSL 03 @SubscriptionShare, server: 144.48.180.187, port: 30836, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: GB WorkTitans 04 @SubscriptionShare, server: 45.14.245.2, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: 17ZDORWIliQHuO6WRGHChXYMzdRtAYVP, udp: true, tfo: true}
-  - {name: IN VCPL 01 @SubscriptionShare, server: 119.36.154.159, port: 2095, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: IT Green 01 @SubscriptionShare, server: 119.36.154.159, port: 2137, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: KR AMAZON 01 @SubscriptionShare, server: 120.241.239.80, port: 21001, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: KR ORACLE 02 @SubscriptionShare, server: 119.36.154.60, port: 700, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: MD WorkTitans 01 @SubscriptionShare, server: 213.159.67.124, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: mbhqsStnFQT1cTZYCdsmkugGUC6GT6rp, udp: true, tfo: true}
-  - {name: NL Timeweb 01 @SubscriptionShare, server: 5.129.214.186, port: 6403, type: ss, cipher: chacha20-ietf-poly1305, password: HWNsKy61qPyoDtrEYEtZuk, udp: true, tfo: true}
-  - {name: NL GCSL 02 @SubscriptionShare, server: 213.176.16.77, port: 7022, type: ss, cipher: chacha20-ietf-poly1305, password: 8HtC7rj6NfZncXYvAjDV5t, udp: true, tfo: true}
-  - {name: NL TIGB 03 @SubscriptionShare, server: 119.36.154.159, port: 2144, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: RU Chelyabinsk 01 @SubscriptionShare, server: 119.36.154.159, port: 2043, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: TR Scalaxy 01 @SubscriptionShare, server: 120.241.239.80, port: 24001, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: TR GCSL 02 @SubscriptionShare, server: 185.39.204.189, port: 34085, type: ss, cipher: chacha20-ietf-poly1305, password: depjSbjv2Uql6W4Vge7sDf, udp: true, tfo: true}
-  - {name: TR BBVTHSVT 03 @SubscriptionShare, server: 119.36.154.159, port: 2123, type: ss, cipher: aes-128-gcm, password: 0e2c8be1-f36b-477c-b808-8e429fa6357b, udp: true, tfo: true}
-  - {name: Unknown Akari 01 @SubscriptionShare, server: 120.241.239.80, port: 20010, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: VN MTCL 01 @SubscriptionShare, server: 120.241.239.80, port: 29001, type: ss, cipher: aes-256-gcm, password: 8ddc0a47-9a7f-41e1-adf7-f6322276c1ca, udp: true, tfo: true}
-  - {name: VN VIETPN 02 @SubscriptionShare, server: 103.186.155.153, port: 38388, type: ss, cipher: aes-256-cfb, password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV, udp: true, tfo: true}
+  - {name: SG Tencent 01 @SubscriptionShare, server: 43.160.197.160, port: 443, type: trojan, password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf, skip-cert-verify: true, network: ws, ws-opts: {path: ""}, udp: true, tfo: true}
+  - {name: US Tencent 01 @SubscriptionShare, server: 43.162.121.7, port: 1443, type: trojan, password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf, skip-cert-verify: true, network: ws, ws-opts: {path: ""}, udp: true, tfo: true}
 proxy-groups:
-  - {name: Proxy, type: select, proxies: [Auto, DIRECT, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan, HK Akari 01 @SubscriptionShare, HK HKT 02 @SubscriptionShare, HK HKT 03 @SubscriptionShare, HK HKT 04 @SubscriptionShare, HK HKT 05 @SubscriptionShare, HK HGCL 06 @SubscriptionShare, HK HGCL 07 @SubscriptionShare, HK HKBNL 08 @SubscriptionShare, HK HKT 09 @SubscriptionShare, HK HK 10 @SubscriptionShare, HK HGCL 11 @SubscriptionShare, HK HK 12 @SubscriptionShare, HK HKBNL 13 @SubscriptionShare, HK HK 14 @SubscriptionShare, HK HKBNL 15 @SubscriptionShare, HK DMIT 16 @SubscriptionShare, HK HKT 17 @SubscriptionShare, HK HKT 18 @SubscriptionShare, SG Akari 01 @SubscriptionShare, SG AMAZON 02 @SubscriptionShare, SG Akamai 03 @SubscriptionShare, SG AS 04 @SubscriptionShare, SG ORACLE 05 @SubscriptionShare, SG ORACLE 06 @SubscriptionShare, SG ORACLE 07 @SubscriptionShare, JP Akari 01 @SubscriptionShare, JP ORACLE 02 @SubscriptionShare, JP ORACLE 03 @SubscriptionShare, JP AMAZON 04 @SubscriptionShare, JP xTom 05 @SubscriptionShare, US Akari 01 @SubscriptionShare, US AS 02 @SubscriptionShare, US AS 03 @SubscriptionShare, US ASNET 04 @SubscriptionShare, US EDCL 05 @SubscriptionShare, US 365 06 @SubscriptionShare, US Alibaba 07 @SubscriptionShare, US MICROSOFT 08 @SubscriptionShare, US Serva 09 @SubscriptionShare, TW Akari 01 @SubscriptionShare, TW DCBG 02 @SubscriptionShare, CA TGs4 01 @SubscriptionShare, CA Datacamp 02 @SubscriptionShare, DE AS 01 @SubscriptionShare, DE IPProjects 02 @SubscriptionShare, DE ASNET 03 @SubscriptionShare, ES Chelyabinsk 01 @SubscriptionShare, GB M247 01 @SubscriptionShare, GB ICSL 02 @SubscriptionShare, GB UDSL 03 @SubscriptionShare, GB WorkTitans 04 @SubscriptionShare, IN VCPL 01 @SubscriptionShare, IT Green 01 @SubscriptionShare, KR AMAZON 01 @SubscriptionShare, KR ORACLE 02 @SubscriptionShare, MD WorkTitans 01 @SubscriptionShare, NL Timeweb 01 @SubscriptionShare, NL GCSL 02 @SubscriptionShare, NL TIGB 03 @SubscriptionShare, RU Chelyabinsk 01 @SubscriptionShare, TR Scalaxy 01 @SubscriptionShare, TR GCSL 02 @SubscriptionShare, TR BBVTHSVT 03 @SubscriptionShare, Unknown Akari 01 @SubscriptionShare, VN MTCL 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
-  - {name: Auto, type: fallback, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK Akari 01 @SubscriptionShare, HK HKT 02 @SubscriptionShare, HK HKT 03 @SubscriptionShare, HK HKT 04 @SubscriptionShare, HK HKT 05 @SubscriptionShare, HK HGCL 06 @SubscriptionShare, HK HGCL 07 @SubscriptionShare, HK HKBNL 08 @SubscriptionShare, HK HKT 09 @SubscriptionShare, HK HK 10 @SubscriptionShare, HK HGCL 11 @SubscriptionShare, HK HK 12 @SubscriptionShare, HK HKBNL 13 @SubscriptionShare, HK HK 14 @SubscriptionShare, HK HKBNL 15 @SubscriptionShare, HK DMIT 16 @SubscriptionShare, HK HKT 17 @SubscriptionShare, HK HKT 18 @SubscriptionShare, SG Akari 01 @SubscriptionShare, SG AMAZON 02 @SubscriptionShare, SG Akamai 03 @SubscriptionShare, SG AS 04 @SubscriptionShare, SG ORACLE 05 @SubscriptionShare, SG ORACLE 06 @SubscriptionShare, SG ORACLE 07 @SubscriptionShare, JP Akari 01 @SubscriptionShare, JP ORACLE 02 @SubscriptionShare, JP ORACLE 03 @SubscriptionShare, JP AMAZON 04 @SubscriptionShare, JP xTom 05 @SubscriptionShare, US Akari 01 @SubscriptionShare, US AS 02 @SubscriptionShare, US AS 03 @SubscriptionShare, US ASNET 04 @SubscriptionShare, US EDCL 05 @SubscriptionShare, US 365 06 @SubscriptionShare, US Alibaba 07 @SubscriptionShare, US MICROSOFT 08 @SubscriptionShare, US Serva 09 @SubscriptionShare, TW Akari 01 @SubscriptionShare, TW DCBG 02 @SubscriptionShare, CA TGs4 01 @SubscriptionShare, CA Datacamp 02 @SubscriptionShare, DE AS 01 @SubscriptionShare, DE IPProjects 02 @SubscriptionShare, DE ASNET 03 @SubscriptionShare, ES Chelyabinsk 01 @SubscriptionShare, GB M247 01 @SubscriptionShare, GB ICSL 02 @SubscriptionShare, GB UDSL 03 @SubscriptionShare, GB WorkTitans 04 @SubscriptionShare, IN VCPL 01 @SubscriptionShare, IT Green 01 @SubscriptionShare, KR AMAZON 01 @SubscriptionShare, KR ORACLE 02 @SubscriptionShare, MD WorkTitans 01 @SubscriptionShare, NL Timeweb 01 @SubscriptionShare, NL GCSL 02 @SubscriptionShare, NL TIGB 03 @SubscriptionShare, RU Chelyabinsk 01 @SubscriptionShare, TR Scalaxy 01 @SubscriptionShare, TR GCSL 02 @SubscriptionShare, TR BBVTHSVT 03 @SubscriptionShare, Unknown Akari 01 @SubscriptionShare, VN MTCL 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
-  - {name: Apple, type: select, proxies: [Proxy, DIRECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: BiliBili, type: select, proxies: [Proxy, DIRECT, Auto, 🇭🇰 Hong Kong, 🇨🇳 Taiwan]}
-  - {name: Netflix, type: select, proxies: [Proxy, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Disney, type: select, proxies: [Proxy, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: YouTube, type: select, proxies: [Proxy, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: TikTok, type: select, proxies: [Proxy, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: GlobalMedia, type: select, proxies: [Proxy, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: OpenAI, type: select, proxies: [Proxy, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Google, type: select, proxies: [Proxy, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Microsoft, type: select, proxies: [Proxy, DIRECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Steam, type: select, proxies: [Proxy, DIRECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: PayPal, type: select, proxies: [Proxy, DIRECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: Proxy, type: select, proxies: [Auto, RoundRobin, DIRECT, REJECT, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan, SG Tencent 01 @SubscriptionShare, US Tencent 01 @SubscriptionShare]}
+  - {name: Auto, type: fallback, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [SG Tencent 01 @SubscriptionShare, US Tencent 01 @SubscriptionShare]}
+  - {name: RoundRobin, type: load-balance, strategy: round-robin, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, tolerance: 100, proxies: [SG Tencent 01 @SubscriptionShare, US Tencent 01 @SubscriptionShare]}
+  - {name: Apple, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: BiliBili, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇨🇳 Taiwan]}
+  - {name: Netflix, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: Disney, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: YouTube, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: TikTok, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: GlobalMedia, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: OpenAI, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: Google, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: Microsoft, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: Steam, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
+  - {name: PayPal, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
   - {name: Telegram, type: select, proxies: [Proxy, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Lan, type: select, proxies: [Proxy, Auto, DIRECT]}
-  - {name: ChinaMax, type: select, proxies: [Proxy, Auto, DIRECT]}
-  - {name: Final, type: select, proxies: [Proxy, Auto, DIRECT]}
-  - {name: 🇭🇰 Hong Kong, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK Akari 01 @SubscriptionShare, HK HKT 02 @SubscriptionShare, HK HKT 03 @SubscriptionShare, HK HKT 04 @SubscriptionShare, HK HKT 05 @SubscriptionShare, HK HGCL 06 @SubscriptionShare, HK HGCL 07 @SubscriptionShare, HK HKBNL 08 @SubscriptionShare, HK HKT 09 @SubscriptionShare, HK HK 10 @SubscriptionShare, HK HGCL 11 @SubscriptionShare, HK HK 12 @SubscriptionShare, HK HKBNL 13 @SubscriptionShare, HK HK 14 @SubscriptionShare, HK HKBNL 15 @SubscriptionShare, HK DMIT 16 @SubscriptionShare, HK HKT 17 @SubscriptionShare, HK HKT 18 @SubscriptionShare]}
-  - {name: 🇸🇬 Singapore, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [SG Akari 01 @SubscriptionShare, SG AMAZON 02 @SubscriptionShare, SG Akamai 03 @SubscriptionShare, SG AS 04 @SubscriptionShare, SG ORACLE 05 @SubscriptionShare, SG ORACLE 06 @SubscriptionShare, SG ORACLE 07 @SubscriptionShare]}
-  - {name: 🇯🇵 Japan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [JP Akari 01 @SubscriptionShare, JP ORACLE 02 @SubscriptionShare, JP ORACLE 03 @SubscriptionShare, JP AMAZON 04 @SubscriptionShare, JP xTom 05 @SubscriptionShare]}
-  - {name: 🇺🇸 United States, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [US Akari 01 @SubscriptionShare, US AS 02 @SubscriptionShare, US AS 03 @SubscriptionShare, US ASNET 04 @SubscriptionShare, US EDCL 05 @SubscriptionShare, US 365 06 @SubscriptionShare, US Alibaba 07 @SubscriptionShare, US MICROSOFT 08 @SubscriptionShare, US Serva 09 @SubscriptionShare]}
-  - {name: 🇨🇳 Taiwan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [TW Akari 01 @SubscriptionShare, TW DCBG 02 @SubscriptionShare]}
+  - {name: Lan, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
+  - {name: China, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
+  - {name: Final, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
+  - {name: 🇭🇰 Hong Kong, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
+  - {name: 🇸🇬 Singapore, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [SG Tencent 01 @SubscriptionShare]}
+  - {name: 🇯🇵 Japan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
+  - {name: 🇺🇸 United States, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [US Tencent 01 @SubscriptionShare]}
+  - {name: 🇨🇳 Taiwan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
 rules:
   - RULE-SET,Apple_Classical_No_Resolve,Apple
   - RULE-SET,BiliBili_No_Resolve,BiliBili
@@ -110,7 +91,8 @@ rules:
   - RULE-SET,Telegram_No_Resolve,Telegram
   - RULE-SET,Steam_No_Resolve,Steam
   - RULE-SET,Lan_No_Resolve,Lan
-  - RULE-SET,ChinaMax_Classical_No_IPv6_No_Resolve,ChinaMax
+  - RULE-SET,ChinaMax_Classical_No_IPv6_No_Resolve,China
+  - GEOIP,CN,China
   - MATCH,Final
 rule-providers:
   Apple_Classical_No_Resolve:
