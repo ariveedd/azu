@@ -49,17 +49,20 @@ dns:
   fake-ip-range: 198.18.0.1/15
   fake-ip-filter: ["*.lan", "*.localdomain", "*.example", "*.invalid", "*.localhost", "*.test", "*.local"]
 proxies:
-  - {name: HK Tomorin 01 @SubscriptionShare, server: 113.108.6.209, port: 12405, type: ssr, cipher: chacha20-ietf, password: HuTaoCloud, protocol: auth_aes128_sha1, obfs: plain, protocol-param: 69334:Q4NAywZ1OHYZcsd6, obfs-param: 892da69334.microsoft.com, udp: true, tfo: true}
-  - {name: HK CTG 02 @SubscriptionShare, server: 112.213.102.188, port: 41632, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@, udp: true, tfo: true}
-  - {name: HK AKILE 03 @SubscriptionShare, server: 141.11.148.100, port: 11264, type: anytls, password: b2ca8061-cf93-403f-a150-c26fb26610f7, skip-cert-verify: true, tfo: true}
-  - {name: SG Akari 01 @SubscriptionShare, server: 113.108.6.209, port: 12307, type: ssr, cipher: chacha20-ietf, password: HuTaoCloud, protocol: auth_aes128_sha1, obfs: plain, protocol-param: 69334:Q4NAywZ1OHYZcsd6, obfs-param: 892da69334.microsoft.com, udp: true, tfo: true}
-  - {name: SG Amazon 02 @SubscriptionShare, server: 13.212.142.206, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, tfo: true}
-  - {name: JP Akari 01 @SubscriptionShare, server: 113.108.6.209, port: 12005, type: ssr, cipher: chacha20-ietf, password: HuTaoCloud, protocol: auth_aes128_sha1, obfs: plain, protocol-param: 69334:Q4NAywZ1OHYZcsd6, obfs-param: 892da69334.microsoft.com, udp: true, tfo: true}
-  - {name: Unknown Akari 01 @SubscriptionShare, server: 113.108.6.209, port: 12304, type: ssr, cipher: chacha20-ietf, password: HuTaoCloud, protocol: auth_aes128_sha1, obfs: plain, protocol-param: 69334:Q4NAywZ1OHYZcsd6, obfs-param: 892da69334.microsoft.com, udp: true, tfo: true}
+  - {name: HK AKILE 01 @SubscriptionShare, server: 220.130.58.136, port: 31101, type: trojan, password: 125f929b-dbde-43b9-b498-695f1cd45d68, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
+  - {name: HK AKILE 02 @SubscriptionShare, server: 220.130.58.136, port: 31103, type: trojan, password: b2e15b49-6606-4c62-baff-7015390b3c6a, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
+  - {name: HK AKILE 03 @SubscriptionShare, server: 220.130.58.136, port: 31102, type: trojan, password: 92953fc6-f497-43af-9d6d-f3b5589df318, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
+  - {name: US Datacamp 01 @SubscriptionShare, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, tfo: true}
+  - {name: US EDCL 02 @SubscriptionShare, server: 220.130.58.136, port: 35501, type: trojan, password: a1a00c82-5356-4a49-8944-1cd0f94168bb, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
+  - {name: US Zouter 03 @SubscriptionShare, server: 66.92.50.68, port: 52765, type: vless, tls: true, uuid: 1a9344e2-6bcd-485d-833c-6fc642911be7, servername: www.apple.com, host: www.apple.com, path: /, flow: xtls-rprx-vision, reality-opts: {public-key: hMJwKWfRFhROd7JeY2K9_WZga2kwJaZ6FNN7wwEe0Uw, short-id: 4bee2e82}, client-fingerprint: random, skip-cert-verify: true, tfo: true}
+  - {name: TW AKILE 01 @SubscriptionShare, server: 183.232.137.2, port: 18148, type: ss, cipher: chacha20-ietf-poly1305, password: c6d61cd1-d3dc-405e-afb2-d67815f4e4da, tfo: true}
+  - {name: Unknown EDCL 01 @SubscriptionShare, server: 120.232.218.93, port: 30301, type: vless, tls: true, uuid: badfd0f5-2638-41ba-8aab-167045b249b1, servername: lol.secure.dyn.riotcdn.net, host: lol.secure.dyn.riotcdn.net, path: /, flow: xtls-rprx-vision, reality-opts: {public-key: IoW1RqD-BzW9oxaM4KtHx5ap6haIENhYyZt_oMZqlCM, short-id: 950cee8a}, client-fingerprint: random, skip-cert-verify: true, tfo: true}
+  - {name: VN VNPT 01 @SubscriptionShare, server: 103.238.214.82, port: 41632, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@, tfo: true}
+  - {name: VN VIETPN 02 @SubscriptionShare, server: 103.186.155.113, port: 38388, type: ss, cipher: aes-256-cfb, password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV, tfo: true}
 proxy-groups:
-  - {name: Proxy, type: select, proxies: [Auto, RoundRobin, DIRECT, REJECT, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan, HK Tomorin 01 @SubscriptionShare, HK CTG 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, SG Akari 01 @SubscriptionShare, SG Amazon 02 @SubscriptionShare, JP Akari 01 @SubscriptionShare, Unknown Akari 01 @SubscriptionShare]}
-  - {name: Auto, type: fallback, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK Tomorin 01 @SubscriptionShare, HK CTG 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, SG Akari 01 @SubscriptionShare, SG Amazon 02 @SubscriptionShare, JP Akari 01 @SubscriptionShare, Unknown Akari 01 @SubscriptionShare]}
-  - {name: RoundRobin, type: load-balance, strategy: round-robin, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, tolerance: 100, proxies: [HK Tomorin 01 @SubscriptionShare, HK CTG 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, SG Akari 01 @SubscriptionShare, SG Amazon 02 @SubscriptionShare, JP Akari 01 @SubscriptionShare, Unknown Akari 01 @SubscriptionShare]}
+  - {name: Proxy, type: select, proxies: [Auto, RoundRobin, DIRECT, REJECT, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan, HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare, TW AKILE 01 @SubscriptionShare, Unknown EDCL 01 @SubscriptionShare, VN VNPT 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
+  - {name: Auto, type: fallback, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare, TW AKILE 01 @SubscriptionShare, Unknown EDCL 01 @SubscriptionShare, VN VNPT 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
+  - {name: RoundRobin, type: load-balance, strategy: round-robin, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, tolerance: 100, proxies: [HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare, TW AKILE 01 @SubscriptionShare, Unknown EDCL 01 @SubscriptionShare, VN VNPT 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
   - {name: Apple, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
   - {name: BiliBili, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇨🇳 Taiwan]}
   - {name: Netflix, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
@@ -76,11 +79,11 @@ proxy-groups:
   - {name: Lan, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
   - {name: China, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
   - {name: Final, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
-  - {name: 🇭🇰 Hong Kong, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK Tomorin 01 @SubscriptionShare, HK CTG 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare]}
-  - {name: 🇸🇬 Singapore, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [SG Akari 01 @SubscriptionShare, SG Amazon 02 @SubscriptionShare]}
-  - {name: 🇯🇵 Japan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [JP Akari 01 @SubscriptionShare]}
-  - {name: 🇺🇸 United States, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
-  - {name: 🇨🇳 Taiwan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
+  - {name: 🇭🇰 Hong Kong, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare]}
+  - {name: 🇸🇬 Singapore, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
+  - {name: 🇯🇵 Japan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
+  - {name: 🇺🇸 United States, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare]}
+  - {name: 🇨🇳 Taiwan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [TW AKILE 01 @SubscriptionShare]}
 rules:
   - RULE-SET,Apple_Classical_No_Resolve,Apple
   - RULE-SET,BiliBili_No_Resolve,BiliBili
