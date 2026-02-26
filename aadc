@@ -1,194 +1,21 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:6170
-ipv6: true
-unified-delay: false
-tcp-concurrent: true
-global-client-fingerprint: chrome
-hosts:
-  mtalk.google.com: 108.177.125.188
-experimental:
-  ignore-resolve-fail: true
-cfw-latency-url: https://connectivitycheck.gstatic.com/generate_204
-cfw-latency-type: 1
-cfw-latency-timeout: 5000
-cfw-conn-break-strategy: true
-clash-for-android:
-  append-system-dns: false
-  ui-subtitle-pattern: "[一-龥]{2,4}"
-url-rewrite:
-  - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
-  - ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
-sniffer:
-  enable: true
-  sniff:
-    TLS: {ports: [1-65535], override-destination: true}
-    HTTP: {ports: [1-65535], override-destination: true}
-    QUIC: {ports: [1-65535], override-destination: true}
-  skip-domain:
-    - Mijia Cloud
-    - dlg.io.mi.com
-    - +.push.apple.com
-  parse-pure-ip: false
-  force-dns-mapping: true
-  override-destination: true
-dns:
-  ipv6: false
-  enable: true
-  prefer-h3: true
-  listen: 0.0.0.0:1053
-  enhanced-mode: fake-ip
-  use-hosts: false
-  default-nameserver: [119.28.28.28, 119.29.29.29, 223.5.5.5, 223.6.6.6]
-  nameserver: [119.29.29.29, 223.5.5.5, tls://dot.pub:853, tls://dns.alidns.com:853, https://doh.pub:443/dns-query, https://dns.alidns.com:443/dns-query]
-  fallback: [https://dns.cloudflare.com/dns-query, https://doh.dns.sb/dns-query, tls://8.8.4.4:853]
-  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32]}
-  fake-ip-range: 198.18.0.1/15
-  fake-ip-filter: ["*.lan", "*.localdomain", "*.example", "*.invalid", "*.localhost", "*.test", "*.local"]
-proxies:
-  - {name: HK AKILE 01 @SubscriptionShare, server: 220.130.58.136, port: 31101, type: trojan, password: 125f929b-dbde-43b9-b498-695f1cd45d68, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
-  - {name: HK AKILE 02 @SubscriptionShare, server: 220.130.58.136, port: 31103, type: trojan, password: b2e15b49-6606-4c62-baff-7015390b3c6a, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
-  - {name: HK AKILE 03 @SubscriptionShare, server: 220.130.58.136, port: 31102, type: trojan, password: 92953fc6-f497-43af-9d6d-f3b5589df318, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
-  - {name: US Datacamp 01 @SubscriptionShare, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, tfo: true}
-  - {name: US EDCL 02 @SubscriptionShare, server: 220.130.58.136, port: 35501, type: trojan, password: a1a00c82-5356-4a49-8944-1cd0f94168bb, sni: green2.cdntencentmusic.com, skip-cert-verify: true, tfo: true}
-  - {name: US Zouter 03 @SubscriptionShare, server: 66.92.50.68, port: 52765, type: vless, tls: true, uuid: 1a9344e2-6bcd-485d-833c-6fc642911be7, servername: www.apple.com, host: www.apple.com, path: /, flow: xtls-rprx-vision, reality-opts: {public-key: hMJwKWfRFhROd7JeY2K9_WZga2kwJaZ6FNN7wwEe0Uw, short-id: 4bee2e82}, client-fingerprint: random, skip-cert-verify: true, tfo: true}
-  - {name: TW AKILE 01 @SubscriptionShare, server: 183.232.137.2, port: 18148, type: ss, cipher: chacha20-ietf-poly1305, password: c6d61cd1-d3dc-405e-afb2-d67815f4e4da, tfo: true}
-  - {name: Unknown EDCL 01 @SubscriptionShare, server: 120.232.218.93, port: 30301, type: vless, tls: true, uuid: badfd0f5-2638-41ba-8aab-167045b249b1, servername: lol.secure.dyn.riotcdn.net, host: lol.secure.dyn.riotcdn.net, path: /, flow: xtls-rprx-vision, reality-opts: {public-key: IoW1RqD-BzW9oxaM4KtHx5ap6haIENhYyZt_oMZqlCM, short-id: 950cee8a}, client-fingerprint: random, skip-cert-verify: true, tfo: true}
-  - {name: VN VNPT 01 @SubscriptionShare, server: 103.238.214.82, port: 41632, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@, tfo: true}
-  - {name: VN VIETPN 02 @SubscriptionShare, server: 103.186.155.113, port: 38388, type: ss, cipher: aes-256-cfb, password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV, tfo: true}
-proxy-groups:
-  - {name: Proxy, type: select, proxies: [Auto, RoundRobin, DIRECT, REJECT, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan, HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare, TW AKILE 01 @SubscriptionShare, Unknown EDCL 01 @SubscriptionShare, VN VNPT 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
-  - {name: Auto, type: fallback, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare, TW AKILE 01 @SubscriptionShare, Unknown EDCL 01 @SubscriptionShare, VN VNPT 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
-  - {name: RoundRobin, type: load-balance, strategy: round-robin, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, tolerance: 100, proxies: [HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare, US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare, TW AKILE 01 @SubscriptionShare, Unknown EDCL 01 @SubscriptionShare, VN VNPT 01 @SubscriptionShare, VN VIETPN 02 @SubscriptionShare]}
-  - {name: Apple, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: BiliBili, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇨🇳 Taiwan]}
-  - {name: Netflix, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Disney, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: YouTube, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: TikTok, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: GlobalMedia, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: OpenAI, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Google, type: select, proxies: [Proxy, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Microsoft, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Steam, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: PayPal, type: select, proxies: [Proxy, DIRECT, REJECT, Auto, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Telegram, type: select, proxies: [Proxy, 🇭🇰 Hong Kong, 🇸🇬 Singapore, 🇯🇵 Japan, 🇺🇸 United States, 🇨🇳 Taiwan]}
-  - {name: Lan, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
-  - {name: China, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
-  - {name: Final, type: select, proxies: [Proxy, Auto, DIRECT, REJECT]}
-  - {name: 🇭🇰 Hong Kong, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [HK AKILE 01 @SubscriptionShare, HK AKILE 02 @SubscriptionShare, HK AKILE 03 @SubscriptionShare]}
-  - {name: 🇸🇬 Singapore, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
-  - {name: 🇯🇵 Japan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [DIRECT]}
-  - {name: 🇺🇸 United States, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [US Datacamp 01 @SubscriptionShare, US EDCL 02 @SubscriptionShare, US Zouter 03 @SubscriptionShare]}
-  - {name: 🇨🇳 Taiwan, type: url-test, url: http://connectivitycheck.gstatic.com/generate_204, interval: 300, proxies: [TW AKILE 01 @SubscriptionShare]}
-rules:
-  - RULE-SET,Apple_Classical_No_Resolve,Apple
-  - RULE-SET,BiliBili_No_Resolve,BiliBili
-  - RULE-SET,Netflix_No_Resolve,Netflix
-  - RULE-SET,Disney_No_Resolve,Disney
-  - RULE-SET,YouTube_No_Resolve,YouTube
-  - RULE-SET,TikTok_No_Resolve,TikTok
-  - RULE-SET,GlobalMedia_Classical_No_Resolve,GlobalMedia
-  - RULE-SET,OpenAI_No_Resolve,OpenAI
-  - RULE-SET,Google_No_Resolve,Google
-  - RULE-SET,Microsoft_No_Resolve,Microsoft
-  - RULE-SET,PayPal_No_Resolve,PayPal
-  - RULE-SET,Telegram_No_Resolve,Telegram
-  - RULE-SET,Steam_No_Resolve,Steam
-  - RULE-SET,Lan_No_Resolve,Lan
-  - RULE-SET,ChinaMax_Classical_No_IPv6_No_Resolve,China
-  - MATCH,Final
-rule-providers:
-  Apple_Classical_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple_Classical_No_Resolve.yaml
-    path: ./providers/620705298136501531.yaml
-    interval: 86400
-  BiliBili_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BiliBili/BiliBili_No_Resolve.yaml
-    path: ./providers/11603638852460648283.yaml
-    interval: 86400
-  Netflix_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix_No_Resolve.yaml
-    path: ./providers/1676830755088418181.yaml
-    interval: 86400
-  Disney_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Disney/Disney_No_Resolve.yaml
-    path: ./providers/3619193734474428583.yaml
-    interval: 86400
-  YouTube_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube_No_Resolve.yaml
-    path: ./providers/4320614528721064721.yaml
-    interval: 86400
-  TikTok_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok_No_Resolve.yaml
-    path: ./providers/12046065325741940487.yaml
-    interval: 86400
-  GlobalMedia_Classical_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia_Classical_No_Resolve.yaml
-    path: ./providers/858023339275391447.yaml
-    interval: 86400
-  OpenAI_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml
-    path: ./providers/18397082127399263.yaml
-    interval: 86400
-  Google_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google_No_Resolve.yaml
-    path: ./providers/6675703117537907425.yaml
-    interval: 86400
-  Microsoft_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft_No_Resolve.yaml
-    path: ./providers/7640544603944221821.yaml
-    interval: 86400
-  PayPal_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PayPal/PayPal_No_Resolve.yaml
-    path: ./providers/11386053345557631233.yaml
-    interval: 86400
-  Telegram_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram_No_Resolve.yaml
-    path: ./providers/8274002529027446137.yaml
-    interval: 86400
-  Steam_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam_No_Resolve.yaml
-    path: ./providers/4489587354930710085.yaml
-    interval: 86400
-  Lan_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan_No_Resolve.yaml
-    path: ./providers/17488010684820936033.yaml
-    interval: 86400
-  ChinaMax_Classical_No_IPv6_No_Resolve:
-    type: http
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical_No_IPv6_No_Resolve.yaml
-    path: ./providers/14223960209578443337.yaml
-    interval: 86400
+anytls://364ad81a-be84-31ff-b898-625d59ec891a@gttfr1t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E6%B3%95%E5%9B%BD1-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+vmess://eyJ2IjoyLCJwcyI6IuazleWbvTIt5LiL6L295paw54mI6Kej6ZSB5pu05aSa6IqC54K5IiwiYWRkIjoiZnIydC5tdXNrdHJ1bXAudG9wIiwicG9ydCI6ODAsImlkIjoiMzY0YWQ4MWEtYmU4NC0zMWZmLWI4OTgtNjI1ZDU5ZWM4OTFhIiwiYWlkIjowLCJuZXQiOiJodHRwdXBncmFkZSIsInR5cGUiOiJub25lIiwiaG9zdCI6IiIsInBhdGgiOiIvZnIydGdvZ29mYSIsInRscyI6IiJ9
+vmess://eyJ2IjoyLCJwcyI6IuazleWbvTMt5LiL6L295paw54mI6Kej6ZSB5pu05aSa6IqC54K5IiwiYWRkIjoiZnIzLm11c2t0cnVtcC50b3AiLCJwb3J0Ijo4MCwiaWQiOiIzNjRhZDgxYS1iZTg0LTMxZmYtYjg5OC02MjVkNTllYzg5MWEiLCJhaWQiOjAsIm5ldCI6Imh0dHB1cGdyYWRlIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiIiwicGF0aCI6Ii9mcjMzM2dvZ29mYSIsInRscyI6IiJ9
+anytls://364ad81a-be84-31ff-b898-625d59ec891a@gttus1t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD1-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://364ad81a-be84-31ff-b898-625d59ec891a@gttus2t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD2-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://364ad81a-be84-31ff-b898-625d59ec891a@gttus3t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD3-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://77e34e38-0ec2-3865-ab0c-2651a83c3c82@gttfr1t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E6%B3%95%E5%9B%BD1-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+vmess://eyJ2IjoyLCJwcyI6IuazleWbvTIt5LiL6L295paw54mI6Kej6ZSB5pu05aSa6IqC54K5IiwiYWRkIjoiZnIydC5tdXNrdHJ1bXAudG9wIiwicG9ydCI6ODAsImlkIjoiNzdlMzRlMzgtMGVjMi0zODY1LWFiMGMtMjY1MWE4M2MzYzgyIiwiYWlkIjowLCJuZXQiOiJodHRwdXBncmFkZSIsInR5cGUiOiJub25lIiwiaG9zdCI6IiIsInBhdGgiOiIvZnIydGdvZ29mYSIsInRscyI6IiJ9
+vmess://eyJ2IjoyLCJwcyI6IuazleWbvTMt5LiL6L295paw54mI6Kej6ZSB5pu05aSa6IqC54K5IiwiYWRkIjoiZnIzLm11c2t0cnVtcC50b3AiLCJwb3J0Ijo4MCwiaWQiOiI3N2UzNGUzOC0wZWMyLTM4NjUtYWIwYy0yNjUxYTgzYzNjODIiLCJhaWQiOjAsIm5ldCI6Imh0dHB1cGdyYWRlIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiIiwicGF0aCI6Ii9mcjMzM2dvZ29mYSIsInRscyI6IiJ9
+anytls://77e34e38-0ec2-3865-ab0c-2651a83c3c82@gttus1t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD1-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://77e34e38-0ec2-3865-ab0c-2651a83c3c82@gttus2t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD2-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://77e34e38-0ec2-3865-ab0c-2651a83c3c82@gttus3t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD3-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://4148eefe-2c29-39e9-9680-f239d12a52f8@gttfr1t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E6%B3%95%E5%9B%BD1-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+vmess://eyJ2IjoyLCJwcyI6IuazleWbvTIt5LiL6L295paw54mI6Kej6ZSB5pu05aSa6IqC54K5IiwiYWRkIjoiZnIydC5tdXNrdHJ1bXAudG9wIiwicG9ydCI6ODAsImlkIjoiNDE0OGVlZmUtMmMyOS0zOWU5LTk2ODAtZjIzOWQxMmE1MmY4IiwiYWlkIjowLCJuZXQiOiJodHRwdXBncmFkZSIsInR5cGUiOiJub25lIiwiaG9zdCI6IiIsInBhdGgiOiIvZnIydGdvZ29mYSIsInRscyI6IiJ9
+vmess://eyJ2IjoyLCJwcyI6IuazleWbvTMt5LiL6L295paw54mI6Kej6ZSB5pu05aSa6IqC54K5IiwiYWRkIjoiZnIzLm11c2t0cnVtcC50b3AiLCJwb3J0Ijo4MCwiaWQiOiI0MTQ4ZWVmZS0yYzI5LTM5ZTktOTY4MC1mMjM5ZDEyYTUyZjgiLCJhaWQiOjAsIm5ldCI6Imh0dHB1cGdyYWRlIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiIiwicGF0aCI6Ii9mcjMzM2dvZ29mYSIsInRscyI6IiJ9
+anytls://4148eefe-2c29-39e9-9680-f239d12a52f8@gttus1t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD1-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://4148eefe-2c29-39e9-9680-f239d12a52f8@gttus2t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD2-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+anytls://4148eefe-2c29-39e9-9680-f239d12a52f8@gttus3t.18838006.xyz:443?security=tls&type=tcp&fp=chrome&sni=inapps.appsflyersdk.com&insecure=1&allowInsecure=1#%E7%BE%8E%E5%9B%BD3-V2free%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9
+
+
+
