@@ -19,38 +19,17 @@ proxy-groups:
   - 🇦🇪 阿联酋 01 @SCHPD_SUB
   - 🇨🇳 中国 01 @SCHPD_SUB
   - 🇨🇳 中国 02 @SCHPD_SUB
-  - 🇨🇳 中国 03 @SCHPD_SUB
-  - 🇨🇳 中国 04 @SCHPD_SUB
-  - 🇨🇳 中国 05 @SCHPD_SUB
-  - 🇨🇳 中国 06 @SCHPD_SUB
-  - 🇨🇳 中国 07 @SCHPD_SUB
-  - 🇨🇳 中国 08 @SCHPD_SUB
-  - 🇨🇳 中国 09 @SCHPD_SUB
   - 🇩🇪 德国 01 @SCHPD_SUB
   - 🇩🇪 德国 02 @SCHPD_SUB
   - 🇩🇪 德国 03 @SCHPD_SUB
+  - 🇩🇪 德国 04 @SCHPD_SUB
   - 🇫🇷 法国 01 @SCHPD_SUB
   - 🇫🇷 法国 02 @SCHPD_SUB
   - 🇫🇷 法国 03 @SCHPD_SUB
   - 🇫🇷 法国 04 @SCHPD_SUB
-  - 🇫🇷 法国 05 @SCHPD_SUB
-  - 🇫🇷 法国 06 @SCHPD_SUB
-  - 🇫🇷 法国 07 @SCHPD_SUB
-  - 🇫🇷 法国 08 @SCHPD_SUB
-  - 🇫🇷 法国 09 @SCHPD_SUB
-  - 🇫🇷 法国 10 @SCHPD_SUB
-  - 🇫🇷 法国 11 @SCHPD_SUB
-  - 🇫🇷 法国 12 @SCHPD_SUB
-  - 🇫🇷 法国 13 @SCHPD_SUB
-  - 🇫🇷 法国 14 @SCHPD_SUB
-  - 🇫🇷 法国 15 @SCHPD_SUB
   - 🇬🇧 英国 01 @SCHPD_SUB
   - 🇭🇰 香港 01 @SCHPD_SUB
   - 🇭🇰 香港 02 @SCHPD_SUB
-  - 🇭🇰 香港 03 @SCHPD_SUB
-  - 🇭🇰 香港 04 @SCHPD_SUB
-  - 🇭🇰 香港 05 @SCHPD_SUB
-  - 🇭🇰 香港 06 @SCHPD_SUB
   - 🇭🇺 匈牙利 01 @SCHPD_SUB
   - 🇰🇷 韩国 01 @SCHPD_SUB
   - 🇰🇷 韩国 02 @SCHPD_SUB
@@ -72,7 +51,6 @@ proxy-groups:
   - 🇷🇺 俄罗斯联邦 05 @SCHPD_SUB
   - 🇷🇺 白俄罗斯 01 @SCHPD_SUB
   - 🇸🇬 新加坡 01 @SCHPD_SUB
-  - 🇸🇬 新加坡 02 @SCHPD_SUB
   - 🇺🇸 美国 01 @SCHPD_SUB
   - 🇺🇸 美国 02 @SCHPD_SUB
   - 🇺🇸 美国 03 @SCHPD_SUB
@@ -80,7 +58,6 @@ proxy-groups:
   - 🇺🇸 美国 05 @SCHPD_SUB
   - 🇺🇸 美国 06 @SCHPD_SUB
   - 🇺🇸 美国 07 @SCHPD_SUB
-  - 🇺🇸 美国 08 @SCHPD_SUB
   - 🌐 拉脱维亚 01 @SCHPD_SUB
   - 🌐 未知 01 @SCHPD_SUB
   - 🌐 未知 02 @SCHPD_SUB
@@ -91,6 +68,7 @@ proxy-groups:
   - ☁️ Cloudflare 01 @SCHPD_SUB
   - ☁️ Cloudflare 02 @SCHPD_SUB
   - ☁️ Cloudflare 03 @SCHPD_SUB
+  - ☁️ Cloudflare 04 @SCHPD_SUB
 - name: 自动选择
   type: url-test
   url: http://connectivitycheck.gstatic.com/generate_204
@@ -829,411 +807,51 @@ proxies:
   tfo: false
   udp: true
 - name: 🇫🇷 法国 03 @SCHPD_SUB
-  server: m.cnmjin.net
-  type: vmess
-  country: 🇫🇷FR
-  port: 16644
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 1005
-  udp: true
-- name: 🇫🇷 法国 04 @SCHPD_SUB
-  server: 15.237.89.75
+  server: 13.36.148.207
   type: trojan
   country: 🇫🇷FR
   port: 22223
   password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
   skip-cert-verify: true
   udp: true
-  delay: 974
-- name: 🇫🇷 法国 05 @SCHPD_SUB
-  server: 15.237.89.75
+  delay: 1377
+- name: 🇫🇷 法国 04 @SCHPD_SUB
+  server: 13.36.148.207
   type: trojan
   country: 🇫🇷FR
   port: 22222
   password: telegram-id-privatevpns
   skip-cert-verify: true
   udp: true
-  delay: 976
-- name: 🇫🇷 法国 06 @SCHPD_SUB
-  server: m.cnmjin.net
+  delay: 1381
+- name: 🇩🇪 德国 04 @SCHPD_SUB
+  server: 82.198.246.97
+  port: 180
   type: vmess
-  country: 🇫🇷FR
-  port: 16648
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
+  tls: false
   skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 1009
   udp: true
-- name: 🇫🇷 法国 07 @SCHPD_SUB
-  server: planb.mojcn.com
-  type: vmess
-  country: 🇫🇷FR
-  port: 16648
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 2483
-  udp: true
-- name: 🇫🇷 法国 08 @SCHPD_SUB
-  server: m.cnmjin.net
-  type: vmess
-  country: 🇫🇷FR
-  port: 16617
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 910
-  udp: true
-- name: 🇫🇷 法国 09 @SCHPD_SUB
-  server: planb.mojcn.com
-  type: vmess
-  country: 🇫🇷FR
-  port: 16618
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 1163
-  udp: true
-- name: 🇫🇷 法国 10 @SCHPD_SUB
-  server: m.cnmjin.net
-  type: vmess
-  country: 🇫🇷FR
-  port: 16618
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 438
-  udp: true
-- name: 🇫🇷 法国 11 @SCHPD_SUB
-  server: t.cnmjcn.cyou
-  type: vmess
-  country: 🇫🇷FR
-  port: 16618
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 1139
-  udp: true
-- name: 🇺🇸 美国 08 @SCHPD_SUB
-  server: 38.55.194.87
+  delay: 1713
+- name: ☁️ Cloudflare 04 @SCHPD_SUB
+  server: 172.67.157.61
   type: vmess
   country: 🇺🇸US
-  port: 443
-  uuid: 462d9694-62b5-4781-a287-61a422b920e8
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: mn1ray.jagoanvip.xyz
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vvip
-    headers:
-      HOST: mn1ray.jagoanvip.xyz
-  delay: 1363
-  udp: true
-- name: 🇭🇰 香港 03 @SCHPD_SUB
-  server: 47.76.218.163
-  type: vmess
-  country: 🇺🇸US
-  port: 443
-  uuid: 462d9694-62b5-4781-a287-61a422b920e8
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: mn1ray.jagoanvip.xyz
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vvip
-    headers:
-      HOST: mn1ray.jagoanvip.xyz
-  delay: 891
-  udp: true
-- name: 🇸🇬 新加坡 02 @SCHPD_SUB
-  server: 34.143.159.175
-  type: vmess
-  country: 🇺🇸US
-  port: 443
-  uuid: 462d9694-62b5-4781-a287-61a422b920e8
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: mn1ray.jagoanvip.xyz
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vvip
-    headers:
-      HOST: mn1ray.jagoanvip.xyz
-  delay: 999
-  udp: true
-- name: 🇭🇰 香港 04 @SCHPD_SUB
-  server: 83.229.121.113
-  type: vmess
-  country: 🇳🇬NG
-  port: 443
-  uuid: 462d9694-62b5-4781-a287-61a422b920e8
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: mn1ray.jagoanvip.xyz
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vvip
-    headers:
-      HOST: mn1ray.jagoanvip.xyz
-  delay: 1266
-  udp: true
-- name: 🇨🇳 中国 03 @SCHPD_SUB
-  server: u0-ukl1p.cy2511.world
-  type: trojan
-  country: 🇨🇳CN
-  port: 20012
-  password: 4b18c59f-b249-4d78-95bc-fc560a41aab7
-  sni: bing.com
-  skip-cert-verify: true
-  udp: true
-  delay: 1928
-- name: 🇨🇳 中国 04 @SCHPD_SUB
-  server: hn.xn--wlqw1swrj04ju56d.com
-  type: vmess
-  country: 🇨🇳CN
   port: 80
-  uuid: f9ddefc5-d121-486f-9e2f-0c2cd1a3decc
+  uuid: 4e45c1b4-9107-45dd-9995-cdf7cbb44d9d
   alterId: 0
   cipher: auto
   network: ws
-  servername: tms.dingtalk.com
+  servername: m9o0.1xq.indevs.in
   http-opts: {}
   h2-opts: {}
   skip-cert-verify: true
   ws-opts:
-    path: /
+    path: /iSRWSKUJKNuXvVzsYHmsMrnO
     headers:
-      HOST: tms.dingtalk.com
-  delay: 983
-  udp: true
-- name: 🇨🇳 中国 05 @SCHPD_SUB
-  server: pineapple02.cylink.bond
-  type: trojan
-  country: 🇨🇳CN
-  port: 10052
-  password: 4b18c59f-b249-4d78-95bc-fc560a41aab7
-  sni: bing.com
-  skip-cert-verify: true
-  udp: true
-  delay: 1360
-- name: 🇨🇳 中国 06 @SCHPD_SUB
-  server: pineapple02.cylink.bond
-  type: trojan
-  country: 🇨🇳CN
-  port: 30032
-  password: 4b18c59f-b249-4d78-95bc-fc560a41aab7
-  sni: bing.com
-  skip-cert-verify: true
-  udp: true
-  delay: 619
-- name: 🇫🇷 法国 12 @SCHPD_SUB
-  server: planb.mojcn.com
-  type: vmess
-  country: 🇫🇷FR
-  port: 16622
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 2864
-  udp: true
-- name: 🇨🇳 中国 07 @SCHPD_SUB
-  server: hkg.cylink.bond
-  type: trojan
-  country: 🇨🇳CN
-  port: 34492
-  password: 4b18c59f-b249-4d78-95bc-fc560a41aab7
-  sni: www.bing.com
-  skip-cert-verify: true
-  udp: true
-  delay: 684
-- name: 🇨🇳 中国 08 @SCHPD_SUB
-  server: hktro.cylink.bond
-  type: trojan
-  country: 🇨🇳CN
-  port: 33034
-  password: 4b18c59f-b249-4d78-95bc-fc560a41aab7
-  sni: baidu.com
-  skip-cert-verify: true
-  udp: true
-  delay: 583
-- name: 🇭🇰 香港 05 @SCHPD_SUB
-  server: 103.181.164.237
-  type: vmess
-  country: 🏁ZZ
-  port: 52283
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  network: tcp
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  delay: 866
-  udp: true
-- name: 🇭🇰 香港 06 @SCHPD_SUB
-  server: 58.152.25.253
-  port: 443
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-  delay: 2801
-- name: 🇨🇳 中国 09 @SCHPD_SUB
-  server: hkc.cylink.bond
-  type: trojan
-  country: 🇨🇳CN
-  port: 34488
-  password: 4b18c59f-b249-4d78-95bc-fc560a41aab7
-  sni: www.bing.com
-  skip-cert-verify: true
-  udp: true
-  delay: 969
-- name: 🇫🇷 法国 13 @SCHPD_SUB
-  server: m.cnmjin.net
-  type: vmess
-  country: 🇫🇷FR
-  port: 16632
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 613
-  udp: true
-- name: 🇫🇷 法国 14 @SCHPD_SUB
-  server: t.cnmjcn.cyou
-  type: vmess
-  country: 🇫🇷FR
-  port: 16632
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 1273
-  udp: true
-- name: 🇫🇷 法国 15 @SCHPD_SUB
-  server: planb.mojcn.com
-  type: vmess
-  country: 🇫🇷FR
-  port: 16632
-  uuid: a2e68fdf-3339-41e9-aaab-9bb97f07479c
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      HOST: b7a3672ec50a345fff716208019ba38f.mobgslb.tbcache.com
-  delay: 1282
+      HOST: m9o0.1xq.indevs.in
+  delay: 1116
   udp: true
